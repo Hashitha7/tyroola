@@ -1,0 +1,188 @@
+.payment-section {
+  position: relative;
+  background: #0d0d14;
+  padding: 4rem 0 6rem;
+  overflow: hidden;
+}
+
+.payment-bg-lights {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 10% 80%, rgba(178, 252, 228, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.payment-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.payment-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, #181824 0%, #101018 100%);
+  border: 1px solid rgba(255, 215, 0, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.payment-card:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.15);
+}
+
+.payment-logo-wrap {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Afterpay Logo */
+.logo-afterpay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.7rem;
+  color: #000000;
+  letter-spacing: -0.5px;
+}
+.logo-arrows-afterpay {
+  font-size: 1.5rem;
+  transform: rotate(-35deg);
+}
+
+/* Zip Logo */
+.logo-zip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffffff;
+}
+.zip-z {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #a855f7;
+  font-family: 'Orbitron', monospace;
+}
+.zip-badge {
+  background: #a855f7;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 900;
+  padding: 3px 10px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+}
+.zip-p {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  font-family: 'Orbitron', monospace;
+}
+
+/* PayPal Logo */
+.logo-paypal {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.3rem;
+  font-weight: 900;
+  font-style: italic;
+  display: flex;
+}
+.paypal-p1 { color: #0079C1; }
+.paypal-p2 { color: #00457C; }
+
+/* Digital Wallets */
+.logo-wallets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+.wallet-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+.gpay-pill {
+  font-size: 0.95rem;
+}
+.g-blue { color: #4285F4; }
+.g-red { color: #EA4335; }
+.g-yellow { color: #FBBC05; }
+.g-green { color: #34A853; }
+.g-pay { color: #fff; font-weight: 600; }
+
+.payment-card-body {
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.payment-tag {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.payment-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.payment-desc {
+  font-size: 0.9rem;
+  color: #a3a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.payment-card-glow {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
+}
+
+@media (max-width: 1200px) {
+  .payment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -1,0 +1,52 @@
+.hiw-page-hero {
+  background: linear-gradient(135deg, var(--dark2), var(--black));
+  border-bottom: 1px solid rgba(255,215,0,0.1);
+  padding: 3rem 0 2rem;
+}
+
+.hiw-step-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid rgba(255,215,0,0.06);
+}
+.hiw-step-row:last-child { border-bottom: none; }
+.hiw-step-row.reverse { direction: rtl; }
+.hiw-step-row.reverse > * { direction: ltr; }
+
+.hiw-step-canvas { overflow: hidden; }
+
+.hiw-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.hiw-step-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(255,215,0,0.08);
+  line-height: 1;
+  margin-bottom: -1rem;
+}
+.hiw-step-icon { font-size: 2.5rem; }
+
+.hiw-tip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255,215,0,0.05);
+  border: 1px solid rgba(255,215,0,0.15);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .hiw-step-row, .hiw-step-row.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2rem; }
+}
+

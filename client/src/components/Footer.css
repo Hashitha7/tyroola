@@ -1,0 +1,436 @@
+.mega-footer {
+  position: relative;
+  background: #06070a;
+  color: #c9c9d4;
+  border-top: 1px solid rgba(255, 215, 0, 0.15);
+  overflow: hidden;
+}
+
+.mega-footer-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+.footer-divider-subtle {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  margin: 1.5rem 0;
+}
+
+/* Part 1: Top Tyre & Vehicle Directory */
+.footer-directory-section {
+  padding: 4rem 0 2rem;
+}
+
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.75rem;
+}
+
+.directory-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.directory-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.directory-link {
+  color: #8c8c9e;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.directory-link:hover {
+  color: #ffd700;
+  transform: translateX(3px);
+}
+
+.more-link {
+  color: #ffd700;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* Part 2: Press Coverage */
+.footer-press-section {
+  padding: 2rem 0;
+}
+
+.press-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.press-logos-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  opacity: 0.85;
+}
+
+.press-logo-item {
+  color: #e5e5f0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.press-logo-item:hover {
+  color: #ffd700;
+  transform: translateY(-2px);
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.press-bold { font-family: 'Inter', sans-serif; font-size: 1.2rem; font-weight: 900; }
+.press-serif { font-family: 'Times New Roman', serif; font-size: 1.15rem; letter-spacing: 2px; }
+.press-oldstyle { font-family: Georgia, serif; font-size: 1.25rem; font-weight: 800; font-style: italic; }
+.press-sans { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1.5px; }
+.press-yahoo { font-family: 'Inter', sans-serif; font-size: 1.15rem; font-weight: 800; color: #a855f7; }
+.press-fox { font-family: 'Impact', sans-serif; font-size: 1.8rem; letter-spacing: 3px; }
+.press-market { font-family: 'Inter', sans-serif; font-size: 1.2rem; font-weight: 800; font-style: italic; }
+.press-ap { font-family: 'Times New Roman', serif; font-size: 1.4rem; font-weight: 900; }
+.press-box { font-family: sans-serif; font-size: 1.4rem; font-weight: 900; background: #fff; color: #000; padding: 0 8px; border-radius: 4px; }
+
+/* Part 3: Search Strip Wrap */
+.footer-search-strip-wrap {
+  padding: 1rem 0;
+}
+
+/* Part 4: Main Navigation Links */
+.footer-main-links-section {
+  padding: 2.5rem 0;
+}
+
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.footer-heading {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.footer-arrow-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-arrow-links a {
+  color: #9898a8;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.footer-arrow-links a:hover {
+  color: #ffd700;
+  transform: translateX(4px);
+}
+
+/* Payment Icons Grid */
+.payment-icons-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  max-width: 260px;
+}
+
+.pay-badge {
+  background: #ffffff;
+  border-radius: 6px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+  cursor: default;
+}
+
+.pay-badge:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.zip-badge-mini {
+  background: #2b1848;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  gap: 2px;
+}
+.zip-badge-mini .pay-tag {
+  background: #a855f7;
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-size: 0.6rem;
+}
+
+.paypal-badge-mini {
+  color: #003087;
+  font-size: 0.85rem;
+}
+
+.visa-badge-mini {
+  color: #1a1f71;
+  font-size: 0.85rem;
+  font-family: sans-serif;
+  font-style: italic;
+}
+
+.mc-badge-mini {
+  background: #222;
+  display: flex;
+}
+.mc-c1 {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #eb001b;
+  margin-right: -5px;
+}
+.mc-c2 {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f79e1b;
+  opacity: 0.85;
+}
+
+.amex-badge-mini {
+  background: #006fcf;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 900;
+}
+
+.apple-badge-mini {
+  background: #000;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.gpay-badge-mini {
+  background: #fff;
+  color: #5f6368;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.afterpay-badge-mini {
+  background: #b2fce4;
+  color: #000;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+/* Part 5: Secure Shopping, Support & Socials */
+.footer-support-section {
+  padding: 2.5rem 0 3rem;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.ssl-lock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 10px 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.ssl-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #d32f2f;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.ssl-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.ssl-percent {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.ssl-sub {
+  font-size: 0.72rem;
+  color: #8c8c9e;
+  letter-spacing: 0.5px;
+}
+
+.support-center {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.support-phone-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Orbitron', monospace;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffd700;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.support-phone-large:hover {
+  transform: translateX(4px);
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.support-hours, .support-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #a0a0b2;
+}
+
+.support-email a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.support-email a:hover {
+  text-decoration: underline;
+}
+
+.social-pills {
+  display: flex;
+  gap: 12px;
+}
+
+.social-pill {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.social-pill:hover {
+  background: #ffd700;
+  color: #06070a;
+  border-color: #ffd700;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Part 6: Legal Bottom Bar */
+.footer-bottom-bar {
+  background: #030406;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.copyright-text {
+  font-size: 0.8rem;
+  color: #707082;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .directory-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-main-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .directory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .support-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .ssl-lock-badge {
+    margin: 0 auto;
+  }
+  .support-center {
+    align-items: center;
+  }
+  .social-pills {
+    justify-content: center;
+  }
+  .press-logos-grid {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}

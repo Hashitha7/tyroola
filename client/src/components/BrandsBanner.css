@@ -1,0 +1,53 @@
+.brands-section {
+  background: var(--dark2);
+  border-top: 1px solid rgba(255,215,0,0.08);
+  border-bottom: 1px solid rgba(255,215,0,0.08);
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+.brands-track-wrapper {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.brands-track {
+  display: flex;
+  gap: 1rem;
+  animation: brand-scroll 25s linear infinite;
+  width: max-content;
+}
+
+@keyframes brand-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.brands-track:hover { animation-play-state: paused; }
+
+.brand-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,215,0,0.1);
+  white-space: nowrap;
+  transition: all 0.3s;
+  cursor: default;
+}
+.brand-pill:hover {
+  border-color: rgba(255,215,0,0.4);
+  background: rgba(255,215,0,0.05);
+  transform: translateY(-2px);
+}
+.brand-emoji { font-size: 1rem; }
+.brand-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+.brand-pill:hover .brand-name { color: var(--yellow); }
+
