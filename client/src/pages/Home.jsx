@@ -1,5 +1,4 @@
 import Hero from '../components/Hero';
-import BrandsBanner from '../components/BrandsBanner';
 import DealsSlider from '../components/DealsSlider';
 import HowItWorksSection from '../components/HowItWorksSection';
 import FeaturedTyres from '../components/FeaturedTyres';
@@ -20,7 +19,6 @@ import FaqSection from '../components/FaqSection';
 const Home = () => (
   <main>
     <Hero />
-    <BrandsBanner />
     <DealsSlider />
     <HowItWorksSection />
     <FeaturedTyres />
