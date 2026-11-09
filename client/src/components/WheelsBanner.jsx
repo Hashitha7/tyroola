@@ -15,7 +15,7 @@ const WheelsBanner = () => {
         <div className="wheels-content">
           <h2 className="wheels-title">Rims, Mags &amp; Wheels Online</h2>
           <p className="wheels-subtitle">Get the best wheels for your car in just a few clicks.</p>
-          <Link to="/tyres" className="btn btn-primary wheels-cta-btn">
+          <Link to="/wheels" className="btn btn-primary wheels-cta-btn">
             Shop Wheels Now <FiArrowRight />
           </Link>
         </div>
