@@ -1,30 +1,24 @@
 .tips-banner-section {
   position: relative;
-  background: #060609;
+  background-color: #060609;
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
   min-height: 480px;
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 215, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-}
-
-.tips-banner-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80');
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.22) contrast(1.3);
-  transform: scale(1.05);
+  border: none;
+  margin: 0;
 }
 
 .tips-banner-overlay {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse at 50% 50%, rgba(255, 215, 0, 0.08) 0%, transparent 65%),
-    linear-gradient(90deg, #060609 0%, rgba(6, 6, 9, 0.85) 50%, #060609 100%);
+    linear-gradient(180deg, #060609 0%, rgba(6, 6, 9, 0.15) 25%, rgba(6, 6, 9, 0.15) 75%, #060609 100%),
+    linear-gradient(90deg, rgba(6, 6, 9, 0.1) 0%, rgba(6, 6, 9, 0.5) 45%, rgba(6, 6, 9, 0.8) 100%);
+  pointer-events: none;
 }
 
 .tips-banner-container {
@@ -38,83 +32,8 @@
   width: 100%;
 }
 
-/* Left Stack of Tyres */
-.tips-banner-visual {
-  display: flex;
-  justify-content: center;
-}
-
-.tips-tyre-stack {
-  position: relative;
-  width: 220px;
-  height: 260px;
-}
-
-.stack-tyre {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 40% 40%, #2b2b36 0%, #111116 80%);
-  border: 10px solid #1a1a22;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s;
-}
-
-.tyre-back {
-  top: 0;
-  left: 10px;
-  transform: scale(0.85);
-  z-index: 1;
-  opacity: 0.75;
-}
-
-.tyre-mid {
-  top: 35px;
-  left: 25px;
-  transform: scale(0.92);
-  z-index: 2;
-  opacity: 0.9;
-}
-
-.tyre-front {
-  top: 70px;
-  left: 40px;
-  z-index: 3;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 215, 0, 0.15);
-}
-
-.rim-spokes {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #555b68 0%, #252830 100%);
-  border: 4px solid #88929e;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.rim-center {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #ffd700;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-.tyre-brand-emboss {
-  position: absolute;
-  bottom: 14px;
-  font-family: 'Orbitron', monospace;
-  font-size: 0.55rem;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.35);
-  letter-spacing: 1.5px;
+.tips-banner-spacer {
+  min-height: 200px;
 }
 
 /* Center Content */
@@ -225,7 +144,7 @@
     text-align: center;
     gap: 3rem;
   }
-  .tips-banner-visual {
+  .tips-banner-spacer {
     display: none;
   }
   .tips-banner-signboard {
@@ -234,4 +153,3 @@
     width: 100%;
   }
 }
-

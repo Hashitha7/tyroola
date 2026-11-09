@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
+import b4Bg from '../Images/Background/B4.jpg';
 import './TyreTipsBanner.css';
 
 const guideTopics = [
@@ -11,28 +12,15 @@ const guideTopics = [
 
 const TyreTipsBanner = () => {
   return (
-    <section className="tips-banner-section">
-      <div className="tips-banner-bg" />
+    <section
+      className="tips-banner-section"
+      style={{ backgroundImage: `url(${b4Bg})` }}
+    >
       <div className="tips-banner-overlay" />
 
       <div className="container tips-banner-container">
-        {/* Left Visual: 3D Stacked Tyres with Brand Rim */}
-        <div className="tips-banner-visual">
-          <div className="tips-tyre-stack">
-            <div className="stack-tyre tyre-back">
-              <span className="tyre-brand-emboss">MICHELIN</span>
-            </div>
-            <div className="stack-tyre tyre-mid">
-              <span className="tyre-brand-emboss">MICHELIN</span>
-            </div>
-            <div className="stack-tyre tyre-front">
-              <div className="rim-spokes">
-                <div className="rim-center" />
-              </div>
-              <span className="tyre-brand-emboss">PILOT SPORT</span>
-            </div>
-          </div>
-        </div>
+        {/* Left space preserves visibility of tyre stack in B4.jpg background */}
+        <div className="tips-banner-spacer" />
 
         {/* Center Content */}
         <div className="tips-banner-content">
@@ -68,4 +56,3 @@ const TyreTipsBanner = () => {
 };
 
 export default TyreTipsBanner;
-
