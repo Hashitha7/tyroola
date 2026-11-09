@@ -2,11 +2,16 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import tyreRoutes from './routes/tyreRoutes.js';
 import dealRoutes from './routes/dealRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -22,6 +27,17 @@ app.use('/api/reviews', reviewRoutes);
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Tyroola API running' });
+});
+
+// Serve frontend in production
+const clientDistPath = path.join(__dirname, '../client/dist');
+app.use(express.static(clientDistPath));
+
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api')) {
+    return next();
+  }
+  res.sendFile(path.join(clientDistPath, 'index.html'));
 });
 
 // Connect to MongoDB
