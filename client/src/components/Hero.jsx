@@ -7,6 +7,7 @@ import car2 from '../Images/Cars/c2.png';
 import car3 from '../Images/Cars/c3.png';
 import car4 from '../Images/Cars/C4.png';
 import TyreSizeModal from './TyreSizeModal';
+import RegoSearchModal from './RegoSearchModal';
 import './Hero.css';
 
 const carImages = [car1, car2, car3, car4];
@@ -189,39 +190,12 @@ const Hero = () => {
             onSwitchToRego={() => setActiveModal('rego')}
           />
 
-          {/* Interactive 3D Search Popdown Modal for Rego */}
-          {activeModal === 'rego' && (
-            <div className="hero-search-dropdown glass">
-              <div className="dropdown-header">
-                <h4>🚗 Search by Vehicle Rego</h4>
-                <button
-                  type="button"
-                  className="dropdown-close-btn"
-                  onClick={() => setActiveModal(null)}
-                >
-                  <FiX />
-                </button>
-              </div>
-
-              <form onSubmit={handleRegoSearch} className="rego-search-row">
-                <div className="rego-input-wrap">
-                  <span className="rego-aus-flag">🇦🇺</span>
-                  <input
-                    type="text"
-                    className="hero-rego-input"
-                    value={rego}
-                    onChange={(e) => setRego(e.target.value.toUpperCase())}
-                    placeholder="ENTER REGO (e.g. ABC123)"
-                    autoFocus
-                  />
-                </div>
-                <button type="submit" className="btn btn-primary hero-dropdown-submit">
-                  <span>Find My Tyres</span>
-                  <FiArrowRight />
-                </button>
-              </form>
-            </div>
-          )}
+          {/* Multi-Step 3D Rego Search Modal (Matching attached Screenshots) */}
+          <RegoSearchModal
+            isOpen={activeModal === 'rego'}
+            onClose={() => setActiveModal(null)}
+            onSwitchToTyreSize={() => setActiveModal('size')}
+          />
         </div>
       </section>
     </div>

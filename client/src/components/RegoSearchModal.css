@@ -1,0 +1,359 @@
+/* ═════════════════════════════════════════════════════════════════════
+   REGO SEARCH MULTI-STEP MODAL (Compact & Fitted, No Scrollbar)
+   ═════════════════════════════════════════════════════════════════════ */
+
+.rego-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 14, 22, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: modalFadeIn 0.22s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Card - Compact & Fitted */
+.rego-modal-card {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 530px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 199, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+  animation: modalPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes modalPopIn {
+  from {
+    transform: translateY(18px) scale(0.97);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ── 1. Top Black Header Bar ── */
+.rego-modal-header {
+  background: #000000;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  position: relative;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.header-left {
+  width: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.header-back-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.header-back-btn:hover {
+  color: #ffc700;
+  transform: translateX(-2px);
+}
+
+.header-title-box {
+  flex-grow: 1;
+  text-align: center;
+}
+.header-title-text {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+.highlight-val {
+  color: #ffc700;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.edit-pencil-icon {
+  font-size: 0.88rem;
+  color: #ffc700;
+}
+
+.header-close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 2px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: all 0.2s ease;
+}
+.header-close-btn:hover {
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.header-progress-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #ffc700;
+  box-shadow: 0 0 8px rgba(255, 199, 0, 0.8);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── 2. Modal Body (Compact, No Scrollbar) ── */
+.rego-modal-body {
+  padding: 1.1rem 1.6rem 1.1rem;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.rego-modal-body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.step-counter-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.3rem;
+}
+.step-counter-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* ── 3. Step Content ── */
+.step-content-pane {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-main-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 1rem;
+  letter-spacing: -0.2px;
+}
+.step-main-title strong {
+  color: #111827;
+}
+
+.step-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0 0 1.1rem;
+}
+
+/* ── 4. 8 States Grid (Matching Screenshot 2) ── */
+.rego-states-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.4rem;
+}
+
+.rego-state-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  height: 44px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.rego-state-btn:hover {
+  border-color: #ffc700;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+  background: #fffef5;
+}
+.rego-state-btn.selected {
+  border: 2px solid #ffc700;
+  background: #fffdf0;
+  box-shadow: 0 0 10px rgba(255, 199, 0, 0.35);
+  color: #000000;
+}
+
+/* ── 5. Rego Form Step 2 ── */
+.rego-form-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.aus-rego-plate-wrap {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 2.5px solid #111827;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+.aus-rego-plate-wrap:focus-within {
+  border-color: #ffc700;
+  box-shadow: 0 0 0 3px rgba(255, 199, 0, 0.25);
+}
+
+.plate-state-tag {
+  background: #111827;
+  color: #ffc700;
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 0.4rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.aus-plate-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  font-family: monospace, sans-serif;
+}
+.aus-plate-input::placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.plate-aus-flag {
+  font-size: 1.2rem;
+  padding-right: 0.2rem;
+}
+
+.btn-yellow-submit-rego {
+  background: #ffc700;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.22s ease;
+  box-shadow: 0 3px 12px rgba(255, 199, 0, 0.35);
+}
+.btn-yellow-submit-rego:hover {
+  background: #e0b000;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(255, 199, 0, 0.45);
+}
+
+/* Switch search link */
+.switch-search-link-row {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-bottom: 0.85rem;
+}
+.link-btn-switch {
+  background: none;
+  border: none;
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+.link-btn-switch:hover {
+  color: #1e40af;
+}
+
+/* ── 6. Bottom Help Strip ── */
+.rego-modal-footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 0.75rem;
+  text-align: center;
+}
+.chat-help-pill {
+  font-size: 0.8rem;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.chat-help-pill a {
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.smile-emoji {
+  color: #2563eb;
+}
+
+/* ── 7. Responsive ── */
+@media (max-width: 600px) {
+  .rego-modal-body {
+    padding: 0.85rem 1rem 0.95rem;
+  }
+  .rego-states-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+  .rego-state-btn {
+    height: 38px;
+    font-size: 0.9rem;
+  }
+}
