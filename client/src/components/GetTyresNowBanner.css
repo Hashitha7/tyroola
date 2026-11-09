@@ -5,26 +5,27 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 215, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  border-top: none;
+  border-bottom: none;
 }
 
 .warehouse-backdrop {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=1600&q=80');
   background-size: cover;
   background-position: center;
-  filter: grayscale(80%) brightness(0.35) contrast(1.2);
-  transform: scale(1.05);
+  background-repeat: no-repeat;
+  filter: brightness(0.68) contrast(1.15);
+  transform: scale(1.02);
 }
 
 .warehouse-overlay {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse at 70% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 60%),
-    linear-gradient(90deg, rgba(8, 8, 12, 0.95) 0%, rgba(8, 8, 12, 0.75) 50%, rgba(8, 8, 12, 0.92) 100%);
+    linear-gradient(90deg, rgba(8, 8, 12, 0.94) 0%, rgba(8, 8, 12, 0.72) 50%, rgba(8, 8, 12, 0.45) 100%),
+    linear-gradient(180deg, #08080c 0%, transparent 20%, transparent 80%, #08080c 100%);
+  pointer-events: none;
 }
 
 .get-tyres-container {
@@ -51,7 +52,7 @@
   color: #ffffff;
   margin-bottom: 1.2rem;
   line-height: 1.15;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
 }
 
 .get-tyres-subtitle {
@@ -60,6 +61,7 @@
   line-height: 1.6;
   max-width: 600px;
   margin-bottom: 2.25rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
 
 .get-tyres-btn {
@@ -70,6 +72,11 @@
   color: #0a0a0f;
   font-weight: 800;
   box-shadow: 0 10px 30px rgba(255, 199, 0, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .get-tyres-btn:hover {
@@ -85,20 +92,6 @@
   justify-content: center;
 }
 
-.canvas-badge-hint {
-  position: absolute;
-  bottom: 10px;
-  background: rgba(10, 10, 18, 0.75);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  color: #ffd700;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 4px 12px;
-  border-radius: 14px;
-  backdrop-filter: blur(8px);
-}
-
 @media (max-width: 900px) {
   .get-tyres-container {
     grid-template-columns: 1fr;
@@ -112,4 +105,3 @@
     height: 280px;
   }
 }
-

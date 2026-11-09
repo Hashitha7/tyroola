@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Torus } from '@react-three/drei';
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
+import b3Bg from '../Images/Background/B3.jpg';
 import './GetTyresNowBanner.css';
 
 // 3D Rotating Stack of Tyres in Warehouse
@@ -56,8 +57,11 @@ const WarehouseTyreStack = () => {
 const GetTyresNowBanner = () => {
   return (
     <section className="get-tyres-banner">
-      {/* Background Warehouse Racks Texture & Overlay */}
-      <div className="warehouse-backdrop" />
+      {/* Background B3.jpg & Overlay */}
+      <div
+        className="warehouse-backdrop"
+        style={{ backgroundImage: `url(${b3Bg})` }}
+      />
       <div className="warehouse-overlay" />
 
       <div className="container get-tyres-container">
@@ -82,7 +86,6 @@ const GetTyresNowBanner = () => {
               <WarehouseTyreStack />
             </Suspense>
           </Canvas>
-          <div className="canvas-badge-hint">Live 3D Tyre Stack</div>
         </div>
       </div>
     </section>
@@ -90,4 +93,3 @@ const GetTyresNowBanner = () => {
 };
 
 export default GetTyresNowBanner;
-
