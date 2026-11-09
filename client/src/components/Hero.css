@@ -98,10 +98,10 @@
 
 .hero-content-row {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1.18fr;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero-left {
@@ -141,42 +141,81 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 340px;
+  min-height: 380px;
 }
 
 .hero-car-carousel {
   position: relative;
   width: 100%;
-  max-width: 640px;
-  height: 320px;
+  max-width: 780px;
+  height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: carFloat 4.5s ease-in-out infinite;
+}
+
+@keyframes carFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .hero-car-img {
   position: absolute;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.75));
+  filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.8));
   opacity: 0;
-  transform: scale(0.92);
+  transform: scale(1.1);
   transition: opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
 
+/* Proportional scaling for all 4 car images to appear prominently large and evenly balanced */
+.hero-car-img-1 {
+  transform: scale(1.15);
+}
+.hero-car-img-1.active {
+  transform: scale(1.36);
+}
+
+.hero-car-img-2 {
+  transform: scale(1.5);
+}
+.hero-car-img-2.active {
+  transform: scale(1.78);
+}
+
+.hero-car-img-3 {
+  transform: scale(1.2);
+}
+.hero-car-img-3.active {
+  transform: scale(1.42);
+}
+
+.hero-car-img-4 {
+  transform: scale(1.4);
+}
+.hero-car-img-4.active {
+  transform: scale(1.68);
+}
+
 .hero-car-img.active {
   opacity: 1;
-  transform: scale(1.05);
   pointer-events: auto;
-  animation: float 4s ease-in-out infinite;
 }
 
 .car-carousel-dots {
   display: flex;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 14px;
   z-index: 5;
 }
 
@@ -489,6 +528,17 @@
 }
 
 @media (max-width: 768px) {
+  .hero-car-visual {
+    min-height: 250px;
+  }
+  .hero-car-carousel {
+    height: 230px;
+    max-width: 100%;
+  }
+  .hero-car-img-1.active { transform: scale(1.18); }
+  .hero-car-img-2.active { transform: scale(1.45); }
+  .hero-car-img-3.active { transform: scale(1.22); }
+  .hero-car-img-4.active { transform: scale(1.42); }
   .trust-bar-grid {
     justify-content: center;
     gap: 1rem;

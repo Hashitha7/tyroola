@@ -109,7 +109,7 @@ const Hero = () => {
                     key={idx}
                     src={car}
                     alt={`Tyroola Vehicle ${idx + 1}`}
-                    className={`hero-car-img ${idx === currentCarIndex ? 'active' : ''}`}
+                    className={`hero-car-img hero-car-img-${idx + 1} ${idx === currentCarIndex ? 'active' : ''}`}
                   />
                 ))}
               </div>
