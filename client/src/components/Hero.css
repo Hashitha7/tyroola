@@ -1,7 +1,7 @@
 .hero-wrapper {
   position: relative;
   background: #383c42;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* =========================================
@@ -254,7 +254,7 @@
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  z-index: 5;
+  z-index: 20;
 }
 
 .hero-exact-search-bar:hover {
