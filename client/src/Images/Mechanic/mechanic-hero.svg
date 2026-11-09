@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="phone-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffc700" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#ff9500" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#ff9500" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="phone-body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c303c"/>
+      <stop offset="100%" stop-color="#14161d"/>
+    </linearGradient>
+    <linearGradient id="car-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#374151"/>
+      <stop offset="60%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <filter id="gear-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- ── 1. Modern Car on the Right with Open Bonnet ── -->
+  <g transform="translate(420, 160)">
+    <!-- Car Body -->
+    <path d="M-60,180 L220,180 C240,180 250,170 260,150 L270,120 C275,100 270,90 250,85 L220,80 L180,30 C165,10 145,0 115,0 L30,0 C15,0 -10,30 -40,80 L-100,100 C-120,105 -130,120 -130,140 L-130,170 C-130,178 -120,180 -110,180 Z" fill="url(#car-gradient)"/>
+    
+    <!-- Open Bonnet (Hood raised up) -->
+    <path d="M-130,105 L-50,-20 L-35,-15 L-100,105 Z" fill="#4b5563" stroke="#9ca3af" stroke-width="2"/>
+    <line x1="-80" y1="40" x2="-80" y2="110" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Engine Bay Components with metallic highlights -->
+    <rect x="-120" y="115" width="80" height="45" rx="6" fill="#1f242d" stroke="#6b7280" stroke-width="1.5"/>
+    <circle cx="-100" cy="135" r="14" fill="#374151" stroke="#ffc700" stroke-width="2"/>
+    <rect x="-65" y="120" width="22" height="30" rx="3" fill="#3b82f6"/>
+    <rect x="-35" y="125" width="18" height="20" rx="2" fill="#ef4444"/>
+
+    <!-- Car Headlight (Glowing Xenon) -->
+    <polygon points="-125,120 -110,110 -105,125 -125,130" fill="#fef08a" opacity="0.9"/>
+
+    <!-- Car Windows -->
+    <path d="M25,15 L105,15 C125,15 138,24 150,38 L180,75 L20,75 Z" fill="#60a5fa" opacity="0.25"/>
+
+    <!-- Front & Rear Wheels -->
+    <g transform="translate(-70, 180)">
+      <circle cx="0" cy="0" r="42" fill="#111827" stroke="#374151" stroke-width="6"/>
+      <circle cx="0" cy="0" r="28" fill="#4b5563"/>
+      <circle cx="0" cy="0" r="14" fill="#9ca3af"/>
+    </g>
+    <g transform="translate(180, 180)">
+      <circle cx="0" cy="0" r="42" fill="#111827" stroke="#374151" stroke-width="6"/>
+      <circle cx="0" cy="0" r="28" fill="#4b5563"/>
+      <circle cx="0" cy="0" r="14" fill="#9ca3af"/>
+    </g>
+  </g>
+
+  <!-- ── 2. Two Mechanics Working on the Car ── -->
+  <!-- Mechanic 1 (Bending into engine bay) -->
+  <g transform="translate(370, 160)">
+    <!-- Legs / Work Trousers -->
+    <path d="M-15,130 L-25,210 L-5,210 L5,155 L15,210 L35,210 L25,130 Z" fill="#374151"/>
+    <!-- Boots -->
+    <rect x="-32" y="210" width="30" height="12" rx="4" fill="#111827"/>
+    <rect x="12" y="210" width="30" height="12" rx="4" fill="#111827"/>
+    <!-- Torso (bent forward wearing black t-shirt & overalls) -->
+    <path d="M-20,130 L-50,60 L-10,50 L15,115 Z" fill="#1f2937"/>
+    <!-- Overall Straps -->
+    <path d="M-20,130 L-10,75" stroke="#f59e0b" stroke-width="5"/>
+    <!-- Head & Cap -->
+    <circle cx="-50" cy="40" r="16" fill="#fbcfe8"/>
+    <path d="M-65,36 C-65,22 -40,20 -35,32 L-20,34" fill="#f59e0b"/>
+    <!-- Arm reaching into engine -->
+    <path d="M-40,65 L-75,100 L-65,110" stroke="#fbcfe8" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <!-- Mechanic 2 (Standing proudly next to engine with beard) -->
+  <g transform="translate(320, 110)">
+    <!-- Head & Beard -->
+    <circle cx="0" cy="20" r="18" fill="#fed7aa"/>
+    <path d="M-12,18 C-12,5 12,5 12,18 L10,32 C5,38 -5,38 -10,32 Z" fill="#92400e"/> <!-- Brown Hair & Beard -->
+    <circle cx="3" cy="18" r="2" fill="#000"/>
+    <!-- Cap -->
+    <path d="M-16,14 C-16,0 16,0 16,14 L22,14" fill="#1f2937"/>
+    
+    <!-- Torso (Dark Grey Polo with Overalls) -->
+    <path d="M-20,40 L20,40 L24,130 L-24,130 Z" fill="#374151"/>
+    <!-- Overall Straps -->
+    <line x1="-12" y1="40" x2="-12" y2="130" stroke="#f59e0b" stroke-width="4"/>
+    <line x1="12" y1="40" x2="12" y2="130" stroke="#f59e0b" stroke-width="4"/>
+    
+    <!-- Arms -->
+    <path d="M-20,45 L-35,90 L-25,95" stroke="#fed7aa" stroke-width="9" stroke-linecap="round"/>
+    <path d="M20,45 L40,85 L50,80" stroke="#fed7aa" stroke-width="9" stroke-linecap="round"/>
+    <!-- Legs -->
+    <path d="M-22,130 L-24,250 L-4,250 L-2,160 L4,160 L6,250 L26,250 L22,130 Z" fill="#1f2937"/>
+    <!-- Boots -->
+    <rect x="-30" y="250" width="30" height="14" rx="5" fill="#111827"/>
+    <rect x="6" y="250" width="30" height="14" rx="5" fill="#111827"/>
+  </g>
+
+  <!-- ── 3. Central Glowing Smartphone with Gear & Wrench Badge ── -->
+  <g transform="translate(190, 240)">
+    <!-- Yellow Ambient Glow Circle -->
+    <circle cx="0" cy="0" r="145" fill="none" stroke="#ffc700" stroke-width="4" opacity="0.9"/>
+    <circle cx="0" cy="0" r="135" fill="#ffc700" opacity="0.12"/>
+
+    <!-- Smartphone Body (Tilted slightly) -->
+    <rect x="-55" y="-105" width="110" height="210" rx="20" fill="url(#phone-body)" stroke="#4b5563" stroke-width="4" filter="url(#gear-shadow)"/>
+    <!-- Screen -->
+    <rect x="-47" y="-90" width="94" height="165" rx="10" fill="#0f1118"/>
+    <!-- Speaker & Camera -->
+    <circle cx="0" cy="-97" r="2.5" fill="#9ca3af"/>
+
+    <!-- Glowing Yellow Gear inside Phone Screen -->
+    <g transform="translate(0, -8)" filter="url(#gear-shadow)">
+      <circle cx="0" cy="0" r="28" fill="none" stroke="#ffc700" stroke-width="7"/>
+      <!-- Gear Teeth -->
+      <g id="gear-tooth">
+        <rect x="-4" y="-36" width="8" height="9" rx="2" fill="#ffc700"/>
+      </g>
+      <use href="#gear-tooth" transform="rotate(45)"/>
+      <use href="#gear-tooth" transform="rotate(90)"/>
+      <use href="#gear-tooth" transform="rotate(135)"/>
+      <use href="#gear-tooth" transform="rotate(180)"/>
+      <use href="#gear-tooth" transform="rotate(225)"/>
+      <use href="#gear-tooth" transform="rotate(270)"/>
+      <use href="#gear-tooth" transform="rotate(315)"/>
+
+      <!-- Center Wrench Tool -->
+      <path d="M-12,-12 L4,4 M0,-8 L8,0 M-8,0 L0,8" stroke="#111827" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="14" fill="#0f1118"/>
+      <!-- Small Wrench in center -->
+      <path d="M-8,-8 L6,6 L3,9 L-11,-5 Z" fill="#ffc700"/>
+      <circle cx="7" cy="7" r="4" fill="#ffc700"/>
+      <circle cx="7" cy="7" r="2" fill="#0f1118"/>
+    </g>
+
+    <!-- Hands Holding Phone (Left Hand & Right Hand with pointing finger) -->
+    <!-- Left Hand -->
+    <path d="M-85,30 C-75,10 -60,0 -55,-10 L-50,20 C-50,55 -65,70 -80,80 Z" fill="#fed7aa"/>
+    <path d="M-85,30 L-130,80" stroke="#f59e0b" stroke-width="26" stroke-linecap="round"/>
+    
+    <!-- Right Hand with Index Finger Tapping Phone -->
+    <path d="M12,45 L15,10 C15,-5 32,-5 32,10 L30,60" fill="#fed7aa"/>
+    <path d="M30,60 C40,60 55,70 65,90 L110,135" stroke="#f59e0b" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="23" cy="2" r="7" fill="#fed7aa"/>
+  </g>
+</svg>
+

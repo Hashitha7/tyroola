@@ -267,7 +267,7 @@ const servicesCategories = [
     id: 'car-services',
     label: 'Car services',
     desc: 'Logbook services & Basic general services',
-    path: '/contact',
+    path: '/car-services',
     color: '#ffd700',
     icon: (
       <svg viewBox="0 0 64 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -283,7 +283,7 @@ const servicesCategories = [
     id: 'repairs',
     label: 'Repairs',
     desc: 'Battery replacement, Alternator repair, spark plug replacement & more',
-    path: '/contact',
+    path: '/car-services',
     color: '#00d4ff',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -297,7 +297,7 @@ const servicesCategories = [
     id: 'inspections',
     label: 'Inspections',
     desc: 'Pre-purchase, Insurance coverage, Emission, Road Trip inspections & more',
-    path: '/contact',
+    path: '/car-services',
     color: '#00e676',
     icon: (
       <svg viewBox="0 0 64 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -1045,8 +1045,8 @@ const Navbar = () => {
                 <button
                   className={`nav-link mega-trigger ${activeMenu === 'services' ? 'dropdown-active' : ''}`}
                   onClick={() => {
-                    if (activeMenu === 'services') navigate('/contact');
-                    else setActiveMenu('services');
+                    navigate('/car-services');
+                    setActiveMenu(null);
                   }}
                   aria-expanded={activeMenu === 'services'}
                 >
@@ -1064,7 +1064,7 @@ const Navbar = () => {
                   <div className="mega-dropdown-inner">
                     <div className="mega-header">
                       <span className="mega-header-title">Mechanic & Auto Services</span>
-                      <Link to="/contact" className="mega-header-cta" onClick={() => setActiveMenu(null)}>
+                      <Link to="/car-services" className="mega-header-cta" onClick={() => setActiveMenu(null)}>
                         Book Auto Service <FiArrowRight />
                       </Link>
                     </div>
@@ -1389,7 +1389,7 @@ const Navbar = () => {
         <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
           <Link to="/tyres" className="mobile-link" onClick={() => setMenuOpen(false)}>Tyres</Link>
           <Link to="/wheels" className="mobile-link" onClick={() => setMenuOpen(false)}>Wheels</Link>
-          <Link to="/contact" className="mobile-link" onClick={() => setMenuOpen(false)}>Services/Repairs</Link>
+          <Link to="/car-services" className="mobile-link" onClick={() => setMenuOpen(false)}>Services/Repairs</Link>
           <Link to="/deals" className="mobile-link" onClick={() => setMenuOpen(false)}>Deals</Link>
           <Link to="/how-it-works" className="mobile-link" onClick={() => setMenuOpen(false)}>Fitting & Delivery</Link>
           <Link to="/how-it-works" className="mobile-link" onClick={() => setMenuOpen(false)}>Tyre Guide</Link>

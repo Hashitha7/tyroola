@@ -1,0 +1,597 @@
+/* ═════════════════════════════════════════════════════════════════════
+   CAR SERVICES PAGE (Matching Tyroola Screenshots)
+   ═════════════════════════════════════════════════════════════════════ */
+
+.car-services-page {
+  background: #ffffff;
+  color: #1a202c;
+  min-height: 100vh;
+}
+
+/* ── 1. Hero Section (Matching Screenshot 1) ── */
+.services-hero {
+  background: #141722;
+  color: #ffffff;
+  padding: 3.5rem 0 3rem;
+  overflow: hidden;
+  position: relative;
+}
+.services-hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 2.5rem;
+}
+.services-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.services-hero-title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+.services-hero-highlight {
+  color: #f5a623;
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+.services-hero-sub {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 460px;
+}
+.btn-get-service-quote {
+  align-self: flex-start;
+  background: #f5a623;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.35);
+}
+.btn-get-service-quote:hover {
+  background: #e09419;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 166, 35, 0.45);
+}
+.services-hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.services-hero-img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.5));
+}
+
+/* ── 2. Car Services Care Banner (Matching Screenshot 1 bottom) ── */
+.services-care-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4.5rem 0;
+  text-align: center;
+  color: #ffffff;
+}
+.services-care-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 20, 30, 0.78);
+  backdrop-filter: blur(2px);
+}
+.services-care-content {
+  position: relative;
+  z-index: 2;
+}
+.services-care-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.5px;
+}
+.services-care-sub {
+  font-size: 1.15rem;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+/* ── 3. The Tyroola Advantage (Matching Screenshot 2) ── */
+.services-advantage-section {
+  background: #ffffff;
+  padding: 4.5rem 0 3.5rem;
+}
+.advantage-header,
+.maintenance-header,
+.how-it-works-header {
+  text-align: center;
+  margin-bottom: 2.8rem;
+}
+.section-heading-dark {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.5px;
+}
+.section-sub-dark {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.advantage-card {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 14px;
+  padding: 2.2rem 1.8rem;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+.advantage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-color: #ffd700;
+}
+.advantage-icon-box {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+.adv-icon {
+  width: 52px;
+  height: 52px;
+}
+.advantage-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 0.75rem;
+}
+.advantage-card-text {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── 4. Car Maintenance Service (Matching Screenshot 3) ── */
+.car-maintenance-section {
+  background: #ffffff;
+  padding: 1rem 0 4.5rem;
+}
+.maintenance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.2rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.maintenance-card {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.maintenance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  border-color: #f5a623;
+}
+.maintenance-img-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #ffc700;
+}
+.maintenance-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.maintenance-card:hover .maintenance-img {
+  transform: scale(1.05);
+}
+/* Yellow Tint Overlay matching Screenshot 3 */
+.yellow-tint-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 166, 35, 0.55);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.maintenance-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+.maintenance-card-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+.maintenance-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  color: #4b5563;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.btn-select-service {
+  margin-top: auto;
+  align-self: flex-start;
+  background: #f5a623;
+  color: #000000;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-select-service:hover {
+  background: #e09419;
+}
+
+/* ── 5. Promo Map Banner (Matching Screenshot 4) ── */
+.promo-map-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5rem 0;
+  text-align: center;
+  color: #ffffff;
+}
+.promo-map-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 18, 0.72);
+}
+.promo-map-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+.promo-map-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+.promo-map-note {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin: 0 0 1rem;
+}
+.btn-take-me-tyres {
+  background: #f5a623;
+  color: #000000;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.85rem 2.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.35);
+}
+.btn-take-me-tyres:hover {
+  background: #e09419;
+  transform: translateY(-2px);
+}
+
+/* ── 6. How it works (Matching Screenshot 4 bottom & 5) ── */
+.how-it-works-section {
+  background: #ffffff;
+  padding: 4.5rem 0 3.5rem;
+}
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.how-card {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 14px;
+  padding: 2.2rem 1.8rem;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+.how-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-color: #ffd700;
+}
+.how-icon-box {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+.how-icon {
+  width: 52px;
+  height: 52px;
+}
+.how-step-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 0.75rem;
+}
+.how-step-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── 7. Payment Methods Strip (Matching Screenshot 5 bottom) ── */
+.payment-methods-strip {
+  background: #ffffff;
+  padding: 2.5rem 0 4rem;
+  text-align: center;
+  border-top: 1px solid #f1f5f9;
+}
+.payment-strip-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 1.5rem;
+}
+.payment-badges-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.pay-badge {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #334155;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+.pay-zip { color: #aa22e0; }
+.pay-paypal { color: #003087; }
+.pay-visa { color: #1a1f71; }
+.pay-mc { color: #eb001b; }
+.pay-afterpay { color: #b2fce4; background: #000; }
+
+/* ── 8. Quote Modal ── */
+.quote-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease both;
+}
+.quote-modal-card {
+  position: relative;
+  background: #ffffff;
+  color: #111827;
+  border-radius: 18px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  padding: 2.2rem;
+}
+.quote-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.quote-modal-close:hover {
+  background: #000;
+  color: #fff;
+}
+.quote-header {
+  margin-bottom: 1.5rem;
+}
+.quote-badge {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #f5a623;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.quote-modal-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0.3rem 0;
+}
+.quote-modal-subtitle {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+}
+.form-group-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.form-field label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #334155;
+}
+.form-input {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.9rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+.form-input:focus {
+  border-color: #f5a623;
+}
+.btn-submit-quote {
+  width: 100%;
+  background: #f5a623;
+  color: #000000;
+  border: none;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+}
+.btn-submit-quote:hover {
+  background: #e09419;
+}
+.quote-modal-footer-notes {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  color: #64748b;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #edf2f7;
+}
+
+/* Success state */
+.quote-success-state {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+.success-icon-wrap {
+  width: 60px;
+  height: 60px;
+  background: #10b981;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+}
+.quote-estimate-box {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin: 1.2rem 0;
+  font-size: 0.9rem;
+}
+.quote-estimate-box strong {
+  display: block;
+  font-size: 1.4rem;
+  color: #b45309;
+}
+.quote-sub-note {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .services-hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .btn-get-service-quote {
+    align-self: center;
+  }
+  .advantage-grid,
+  .how-grid {
+    grid-template-columns: 1fr;
+  }
+  .maintenance-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
