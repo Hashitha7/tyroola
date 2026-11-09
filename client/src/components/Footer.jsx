@@ -74,8 +74,8 @@ const pressLogos = [
 
 const Footer = () => {
   return (
-    <footer className="mega-footer">
-      <div className="mega-footer-glow" />
+    <footer className="site-footer">
+      <div className="site-footer-glow" />
 
       {/* Part 1: Top Tyre & Vehicle SEO Directory (6 Columns) */}
       <div className="footer-directory-section">

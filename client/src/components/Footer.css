@@ -1,31 +1,48 @@
-.mega-footer {
+/* ══════════════════════════════════════
+   MAIN SITE FOOTER (HIGHLY ORGANIZED & STYLED)
+══════════════════════════════════════ */
+.site-footer {
   position: relative;
   background: #06070a;
   color: #c9c9d4;
-  border-top: 1px solid rgba(255, 215, 0, 0.15);
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  display: block;
+  width: 100%;
+  clear: both;
   overflow: hidden;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
 }
 
-.mega-footer-glow {
+.site-footer-glow {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 85%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #ffd700, transparent);
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(90deg, transparent, #ffd700 30%, #ff9900 70%, transparent);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+.site-footer .container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .footer-divider-subtle {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-  margin: 1.5rem 0;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08) 20%, rgba(255, 215, 0, 0.15) 50%, rgba(255, 255, 255, 0.08) 80%, transparent);
 }
 
-/* Part 1: Top Tyre & Vehicle Directory */
+/* ══════════════════════════════════════
+   Part 1: SEO Tyre & Vehicle Directory
+══════════════════════════════════════ */
 .footer-directory-section {
-  padding: 4rem 0 2rem;
+  padding: 3.5rem 0 2.5rem;
 }
 
 .directory-grid {
@@ -34,13 +51,20 @@
   gap: 1.75rem;
 }
 
+.directory-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .directory-title {
   font-family: 'Rajdhani', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
   letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  padding-bottom: 0.5rem;
 }
 
 .directory-list {
@@ -49,49 +73,55 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .directory-link {
   color: #8c8c9e;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   transition: all 0.2s ease;
   display: inline-block;
+  line-height: 1.4;
 }
 
 .directory-link:hover {
   color: #ffd700;
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 .more-link {
   color: #ffd700;
   font-weight: 600;
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
 }
 
-/* Part 2: Press Coverage */
+/* ══════════════════════════════════════
+   Part 2: Press Coverage Logos Strip
+══════════════════════════════════════ */
 .footer-press-section {
-  padding: 2rem 0;
+  padding: 2.25rem 0;
+  background: rgba(255, 255, 255, 0.015);
 }
 
 .press-label {
   font-family: 'Rajdhani', sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.5px;
+  font-size: 1.05rem;
+  color: #ffd700;
+  margin-bottom: 1.25rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .press-logos-grid {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 1.75rem;
-  opacity: 0.85;
+  gap: 2.25rem;
+  opacity: 0.9;
 }
 
 .press-logo-item {
@@ -100,47 +130,51 @@
   letter-spacing: 0.5px;
   transition: all 0.25s ease;
   cursor: default;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .press-logo-item:hover {
   color: #ffd700;
+  border-color: rgba(255, 215, 0, 0.3);
   transform: translateY(-2px);
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.press-bold { font-family: 'Inter', sans-serif; font-size: 1.2rem; font-weight: 900; }
-.press-serif { font-family: 'Times New Roman', serif; font-size: 1.15rem; letter-spacing: 2px; }
-.press-oldstyle { font-family: Georgia, serif; font-size: 1.25rem; font-weight: 800; font-style: italic; }
-.press-sans { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1.5px; }
-.press-yahoo { font-family: 'Inter', sans-serif; font-size: 1.15rem; font-weight: 800; color: #a855f7; }
-.press-fox { font-family: 'Impact', sans-serif; font-size: 1.8rem; letter-spacing: 3px; }
-.press-market { font-family: 'Inter', sans-serif; font-size: 1.2rem; font-weight: 800; font-style: italic; }
-.press-ap { font-family: 'Times New Roman', serif; font-size: 1.4rem; font-weight: 900; }
-.press-box { font-family: sans-serif; font-size: 1.4rem; font-weight: 900; background: #fff; color: #000; padding: 0 8px; border-radius: 4px; }
+.press-bold { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 900; }
+.press-serif { font-family: 'Times New Roman', serif; font-size: 1.05rem; letter-spacing: 2px; }
+.press-oldstyle { font-family: Georgia, serif; font-size: 1.15rem; font-weight: 800; font-style: italic; }
+.press-sans { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 800; letter-spacing: 1.5px; }
+.press-yahoo { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 800; color: #a855f7; }
+.press-fox { font-family: 'Impact', sans-serif; font-size: 1.5rem; letter-spacing: 2px; }
+.press-market { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 800; font-style: italic; }
+.press-ap { font-family: 'Times New Roman', serif; font-size: 1.25rem; font-weight: 900; }
+.press-box { font-family: sans-serif; font-size: 1.2rem; font-weight: 900; background: #fff; color: #000; padding: 0 8px; border-radius: 4px; }
 
-/* Part 3: Search Strip Wrap */
-.footer-search-strip-wrap {
-  padding: 1rem 0;
-}
-
-/* Part 4: Main Navigation Links */
+/* ══════════════════════════════════════
+   Part 4: Main Navigation Links & Payments
+══════════════════════════════════════ */
 .footer-main-links-section {
-  padding: 2.5rem 0;
+  padding: 3rem 0;
 }
 
 .footer-main-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
   gap: 2.5rem;
 }
 
 .footer-heading {
   font-family: 'Rajdhani', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 1.25rem;
   letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  padding-bottom: 0.5rem;
 }
 
 .footer-arrow-links {
@@ -149,7 +183,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.6rem;
 }
 
 .footer-arrow-links a {
@@ -165,12 +199,12 @@
   transform: translateX(4px);
 }
 
-/* Payment Icons Grid */
+/* Payment Icons Grid Matrix */
 .payment-icons-matrix {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  max-width: 260px;
+  max-width: 280px;
 }
 
 .pay-badge {
@@ -180,19 +214,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s;
   cursor: default;
 }
 
 .pay-badge:hover {
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.04);
 }
 
 .zip-badge-mini {
   background: #2b1848;
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 800;
   gap: 2px;
 }
@@ -200,7 +234,7 @@
   background: #a855f7;
   padding: 1px 3px;
   border-radius: 3px;
-  font-size: 0.6rem;
+  font-size: 0.58rem;
 }
 
 .paypal-badge-mini {
@@ -262,39 +296,42 @@
   font-weight: 800;
 }
 
-/* Part 5: Secure Shopping, Support & Socials */
+/* ══════════════════════════════════════
+   Part 5: Secure Shopping, Support & Socials
+══════════════════════════════════════ */
 .footer-support-section {
   padding: 2.5rem 0 3rem;
+  background: rgba(255, 255, 255, 0.01);
 }
 
 .support-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1.8fr 1fr;
+  grid-template-columns: 1.1fr 1.6fr 1fr;
   align-items: center;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 .ssl-lock-badge {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 10px 18px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .ssl-icon-box {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 8px;
   background: #d32f2f;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 }
 
 .ssl-text-wrap {
@@ -304,7 +341,7 @@
 
 .ssl-percent {
   font-family: 'Rajdhani', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 0.5px;
@@ -319,7 +356,7 @@
 .support-center {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .support-phone-large {
@@ -384,22 +421,26 @@
   box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
 }
 
-/* Part 6: Legal Bottom Bar */
+/* ══════════════════════════════════════
+   Part 6: Legal Bottom Bar
+══════════════════════════════════════ */
 .footer-bottom-bar {
   background: #030406;
   padding: 1.25rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   text-align: center;
 }
 
 .copyright-text {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #707082;
   margin: 0;
   letter-spacing: 0.3px;
 }
 
-/* Responsive */
+/* ══════════════════════════════════════
+   Responsive Layout
+══════════════════════════════════════ */
 @media (max-width: 1200px) {
   .directory-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -431,6 +472,6 @@
   }
   .press-logos-grid {
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 }

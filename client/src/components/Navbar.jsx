@@ -934,8 +934,8 @@ const Navbar = () => {
                       ))}
                     </div>
 
-                    <div className="mega-footer">
-                      <span className="mega-footer-text">🏆 Australia's #1 Online Tyre Store · 800+ Fitting Locations</span>
+                    <div className="mega-dropdown-footer">
+                      <span className="mega-dropdown-footer-text">🏆 Australia's #1 Online Tyre Store · 800+ Fitting Locations</span>
                     </div>
                   </div>
                 </div>
@@ -998,8 +998,8 @@ const Navbar = () => {
                       ))}
                     </div>
 
-                    <div className="mega-footer">
-                      <span className="mega-footer-text">⚙️ Top Wheel Brands: Advanti, Enkei, Konig, KMC, Fuel, King Wheels & Marriba</span>
+                    <div className="mega-dropdown-footer">
+                      <span className="mega-dropdown-footer-text">⚙️ Top Wheel Brands: Advanti, Enkei, Konig, KMC, Fuel, King Wheels & Marriba</span>
                     </div>
                   </div>
                 </div>
@@ -1062,8 +1062,8 @@ const Navbar = () => {
                       ))}
                     </div>
 
-                    <div className="mega-footer">
-                      <span className="mega-footer-text">🔧 Professional Qualified Mechanics · Nationwide Warranty & Certified Service</span>
+                    <div className="mega-dropdown-footer">
+                      <span className="mega-dropdown-footer-text">🔧 Professional Qualified Mechanics · Nationwide Warranty & Certified Service</span>
                     </div>
                   </div>
                 </div>
@@ -1126,8 +1126,8 @@ const Navbar = () => {
                       ))}
                     </div>
 
-                    <div className="mega-footer">
-                      <span className="mega-footer-text">⚡ Buy Now Pay Later: Afterpay, Zip, PayPal · 0% Interest Available</span>
+                    <div className="mega-dropdown-footer">
+                      <span className="mega-dropdown-footer-text">⚡ Buy Now Pay Later: Afterpay, Zip, PayPal · 0% Interest Available</span>
                     </div>
                   </div>
                 </div>
@@ -1195,8 +1195,8 @@ const Navbar = () => {
                       ))}
                     </div>
 
-                    <div className="mega-footer">
-                      <span className="mega-footer-text">🚚 Free Metro Shipping & 800+ Certified Independent Fitting Stations Australia-Wide</span>
+                    <div className="mega-dropdown-footer">
+                      <span className="mega-dropdown-footer-text">🚚 Free Metro Shipping & 800+ Certified Independent Fitting Stations Australia-Wide</span>
                     </div>
                   </div>
                 </div>
@@ -1259,8 +1259,8 @@ const Navbar = () => {
                       ))}
                     </div>
 
-                    <div className="mega-footer">
-                      <span className="mega-footer-text">📖 Expert Advice on Tread Depth, Inflation, Speed Ratings, OEM & Maintenance</span>
+                    <div className="mega-dropdown-footer">
+                      <span className="mega-dropdown-footer-text">📖 Expert Advice on Tread Depth, Inflation, Speed Ratings, OEM & Maintenance</span>
                     </div>
                   </div>
                 </div>
@@ -1323,8 +1323,8 @@ const Navbar = () => {
                       ))}
                     </div>
 
-                    <div className="mega-footer">
-                      <span className="mega-footer-text">💬 Australian Support Team Available Mon-Fri · 1800 000 000</span>
+                    <div className="mega-dropdown-footer">
+                      <span className="mega-dropdown-footer-text">💬 Australian Support Team Available Mon-Fri · 1800 000 000</span>
                     </div>
                   </div>
                 </div>
