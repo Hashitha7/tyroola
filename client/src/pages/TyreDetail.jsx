@@ -45,12 +45,19 @@ const mockTyres = {
 
 const TyreDetail = () => {
   const { id } = useParams();
-  const [tyre, setTyre] = useState(null);
+  const [tyre, setTyre] = useState(() => mockTyres[id] || mockTyres['1']);
   const [qty, setQty] = useState(4);
   const [rimColor, setRimColor] = useState('#c0a020');
   const [viewMode, setViewMode] = useState('photo'); // 'photo' | '3d'
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [added, setAdded] = useState(false);
+
+  useEffect(() => {
+    // If id changed, sync immediate fallback
+    if (mockTyres[id]) {
+      setTyre(mockTyres[id]);
+    }
+  }, [id]);
 
   const handleAddToCart = () => {
     if (!tyre) return;
@@ -89,8 +96,12 @@ const TyreDetail = () => {
   useEffect(() => {
     const fetchTyre = async () => {
       try {
-        const { data } = await axios.get(`/api/tyres/${id}`);
-        setTyre(data.data);
+        const res = await axios.get(`/api/tyres/${id}`);
+        if (res.data && typeof res.data === 'object' && res.data.data && res.data.data.model) {
+          setTyre(res.data.data);
+        } else {
+          setTyre(mockTyres[id] || mockTyres['1']);
+        }
       } catch {
         setTyre(mockTyres[id] || mockTyres['1']);
       } finally {
@@ -159,8 +170,8 @@ const TyreDetail = () => {
                 </div>
               ) : (
                 <div className="detail-3d-holder">
-                  <div className="canvas-label">🔄 Drag to rotate</div>
-                  <TyreCanvas height="450px" rimColor={rimColor} rotate={true} showParticles={true} />
+                  <div className="canvas-label">🔄 Drag to rotate 360°</div>
+                  <TyreCanvas height="450px" rimColor={rimColor} rotate={true} showParticles={false} />
                 </div>
               )}
             </div>

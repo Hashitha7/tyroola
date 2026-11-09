@@ -46,31 +46,68 @@ const Tyre3D = ({ rotate = true, color = '#1a1a2a', rimColor = '#888' }) => {
 
       {/* Rim Center */}
       <group ref={rimRef}>
+        {/* Outer Rim Lip & Barrel */}
         <mesh>
-          <cylinderGeometry args={[0.75, 0.75, 0.3, 64]} />
+          <torusGeometry args={[0.75, 0.05, 16, 64]} />
           <meshStandardMaterial
             color={rimColor}
-            metalness={0.9}
-            roughness={0.1}
+            metalness={0.92}
+            roughness={0.15}
+          />
+        </mesh>
+        <mesh>
+          <cylinderGeometry args={[0.72, 0.72, 0.28, 64, 1, true]} />
+          <meshStandardMaterial
+            color="#141824"
+            metalness={0.8}
+            roughness={0.3}
+            side={2}
           />
         </mesh>
 
-        {/* Rim Spokes */}
-        {Array.from({ length: 5 }).map((_, i) => {
-          const angle = (i / 5) * Math.PI * 2;
+        {/* Brake Rotor & Red Caliper behind rim */}
+        <mesh position={[0, 0, -0.06]}>
+          <cylinderGeometry args={[0.62, 0.62, 0.02, 32]} />
+          <meshStandardMaterial color="#64748b" metalness={0.85} roughness={0.4} />
+        </mesh>
+        <mesh position={[0.42, 0.25, -0.04]} rotation={[0, 0, 0.4]}>
+          <boxGeometry args={[0.22, 0.14, 0.08]} />
+          <meshStandardMaterial color="#dc2626" metalness={0.7} roughness={0.2} />
+        </mesh>
+
+        {/* Rim Spokes (10-spoke Luxury Alloy Design) */}
+        {Array.from({ length: 10 }).map((_, i) => {
+          const angle = (i / 10) * Math.PI * 2;
           return (
-            <mesh key={i} rotation={[0, 0, angle]}>
-              <boxGeometry args={[0.08, 0.6, 0.25]} />
-              <meshStandardMaterial color={rimColor} metalness={0.95} roughness={0.05} />
+            <mesh key={i} rotation={[0, 0, angle]} position={[0, 0, 0.02]}>
+              <boxGeometry args={[0.07, 0.72, 0.08]} />
+              <meshStandardMaterial color={rimColor} metalness={0.95} roughness={0.08} />
             </mesh>
           );
         })}
 
-        {/* Center Hub */}
-        <mesh>
-          <cylinderGeometry args={[0.15, 0.15, 0.4, 32]} />
-          <meshStandardMaterial color="#aaa" metalness={1} roughness={0} />
+        {/* Center Hub & Cap */}
+        <mesh position={[0, 0, 0.04]}>
+          <cylinderGeometry args={[0.22, 0.22, 0.1, 32]} />
+          <meshStandardMaterial color="#1a1e28" metalness={0.8} roughness={0.2} />
         </mesh>
+        <mesh position={[0, 0, 0.09]}>
+          <cylinderGeometry args={[0.12, 0.12, 0.02, 32]} />
+          <meshStandardMaterial color={rimColor} metalness={0.95} roughness={0.05} />
+        </mesh>
+
+        {/* 5 Chrome Lug Nuts */}
+        {Array.from({ length: 5 }).map((_, i) => {
+          const angle = (i / 5) * Math.PI * 2;
+          const x = Math.cos(angle) * 0.16;
+          const y = Math.sin(angle) * 0.16;
+          return (
+            <mesh key={i} position={[x, y, 0.1]}>
+              <cylinderGeometry args={[0.022, 0.022, 0.02, 6]} />
+              <meshStandardMaterial color="#e2e8f0" metalness={1} roughness={0.1} />
+            </mesh>
+          );
+        })}
       </group>
     </group>
   );
