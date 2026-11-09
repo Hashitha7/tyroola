@@ -1,22 +1,23 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiChevronLeft, FiX, FiCheck, FiHelpCircle, FiEdit2, FiInfo } from 'react-icons/fi';
+import { FiChevronLeft, FiX, FiHelpCircle, FiEdit2, FiInfo } from 'react-icons/fi';
 import './TyreSizeModal.css';
 
 // Pre-defined values matching Tyroola reference
 const popularWidths = ['185', '195', '205', '215', '225', '235', '245', '265'];
-const allWidths = ['155', '165', '175', '185', '195', '205', '215', '225', '235', '245', '255', '265', '275', '285', '295'];
+const allWidths = ['155', '165', '175', '185', '195', '205', '215', '225', '235', '245', '255', '265', '275', '285'];
 
-const popularProfiles = ['None', '35', '40', '45', '50', '55', '60', '65', '70', '75'];
-const allProfiles = ['None', '25', '30', '35', '40', '45', '50', '55', '60', '65', '70', '75', '80', '85'];
+const popularProfiles = ['None', '35', '40', '45', '50', '55', '60', '65'];
+const allProfiles = ['None', '30', '35', '40', '45', '50', '55', '60', '65', '70', '75', '80'];
 
-const rimSizes = ['R13', 'R14', 'R15', 'R16', 'R17', 'R17.5', 'R18', 'R19', 'R20', 'R21', 'R22'];
+const popularRims = ['R13', 'R14', 'R15', 'R16', 'R17', 'R17.5', 'R18', 'R19'];
+const allRims = ['R13', 'R14', 'R15', 'R16', 'R17', 'R17.5', 'R18', 'R19', 'R20', 'R21', 'R22'];
 
-const loadIndexes = ['Any', '82', '85', '88', '91', '94', '95', '98', '100', '102', '107', '112'];
-const speedRatings = ['Any', 'H (210 km/h)', 'V (240 km/h)', 'W (270 km/h)', 'Y (300 km/h)', 'T (190 km/h)', 'S (180 km/h)'];
+const loadIndexes = ['Any', '82', '85', '88', '91', '94', '95', '98', '100', '102'];
+const speedRatings = ['Any', 'H (210 km/h)', 'V (240 km/h)', 'W (270 km/h)', 'Y (300 km/h)'];
 
 /**
- * 3D Tyre Top Arc with Sidewall Markings & Checkmark Badges
+ * Compact 3D Tyre Top Arc with Sidewall Markings & Checkmark Badges
  */
 const TyreSidewallIllustration = ({ step, width, profile, rim }) => {
   const displayWidth = width || '205';
@@ -25,7 +26,7 @@ const TyreSidewallIllustration = ({ step, width, profile, rim }) => {
 
   return (
     <div className="tyre-arc-visual-wrapper">
-      <svg viewBox="0 0 520 180" className="tyre-arc-svg">
+      <svg viewBox="0 0 520 145" className="tyre-arc-svg">
         <defs>
           <linearGradient id="tyre-rubber" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stop-color="#181b22" />
@@ -41,78 +42,78 @@ const TyreSidewallIllustration = ({ step, width, profile, rim }) => {
           </linearGradient>
 
           <filter id="badge-glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#10b981" flood-opacity="0.5" />
+            <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#10b981" flood-opacity="0.5" />
           </filter>
         </defs>
 
         {/* ── Outer Tyre Tread Arc ── */}
         <path
-          d="M 60 175 A 200 135 0 0 1 460 175"
+          d="M 65 140 A 195 110 0 0 1 455 140"
           fill="none"
           stroke="url(#tyre-rubber)"
-          strokeWidth="38"
+          strokeWidth="32"
           strokeLinecap="round"
         />
 
         {/* Tread Grooves (sipes) */}
         <path
-          d="M 64 175 A 196 131 0 0 1 456 175"
+          d="M 68 140 A 191 106 0 0 1 452 140"
           fill="none"
           stroke="#0f1117"
-          strokeWidth="4"
+          strokeWidth="3.5"
           strokeDasharray="8 6"
         />
         <path
-          d="M 72 175 A 188 123 0 0 1 448 175"
+          d="M 75 140 A 184 99 0 0 1 445 140"
           fill="none"
           stroke="#334155"
-          strokeWidth="1.5"
+          strokeWidth="1.2"
           strokeDasharray="4 8"
         />
 
         {/* ── Sidewall Layer ── */}
         <path
-          d="M 95 175 A 165 105 0 0 1 425 175"
+          d="M 98 140 A 162 82 0 0 1 422 140"
           fill="none"
           stroke="#11151c"
-          strokeWidth="28"
+          strokeWidth="24"
         />
 
         {/* Inner Wheel Rim Lip ── */}
         <path
-          d="M 115 175 A 145 85 0 0 1 405 175"
+          d="M 118 140 A 142 66 0 0 1 402 140"
           fill="none"
           stroke="url(#rim-alloy)"
-          strokeWidth="12"
+          strokeWidth="10"
         />
         <path
-          d="M 124 175 A 136 76 0 0 1 396 175"
+          d="M 126 140 A 134 58 0 0 1 394 140"
           fill="none"
           stroke="#94a3b8"
-          strokeWidth="1.5"
+          strokeWidth="1.2"
           opacity="0.6"
         />
 
         {/* Wheel Spokes Arches */}
-        <path d="M 210 175 L 210 120 A 50 50 0 0 1 310 120 L 310 175" fill="none" stroke="#0f172a" strokeWidth="10" />
-        <path d="M 155 175 L 175 135" stroke="#1e293b" strokeWidth="8" />
-        <path d="M 365 175 L 345 135" stroke="#1e293b" strokeWidth="8" />
+        <path d="M 215 140 L 215 95 A 45 45 0 0 1 305 95 L 305 140" fill="none" stroke="#0f172a" strokeWidth="8" />
+        <path d="M 160 140 L 180 110" stroke="#1e293b" strokeWidth="6" />
+        <path d="M 360 140 L 340 110" stroke="#1e293b" strokeWidth="6" />
 
         {/* ── Sidewall Text Details ── */}
         {/* Width Group */}
-        <g transform="translate(182, 86)">
+        <g transform="translate(182, 68)">
           {/* Green Checkmark Badge if Step > 1 */}
           {step > 1 && (
-            <g transform="translate(0, -22)" filter="url(#badge-glow)">
-              <circle cx="0" cy="0" r="8" fill="#10b981" />
-              <path d="M -3.5 -0.5 L -1 2 L 4 -3" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <g transform="translate(0, -18)" filter="url(#badge-glow)">
+              <circle cx="0" cy="0" r="7.5" fill="#10b981" />
+              <path d="M -3 -0.5 L -1 1.8 L 3.5 -2.5" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </g>
           )}
           <text
             x="0"
             y="0"
             textAnchor="middle"
-            fontSize="18"
+            fontSize="16"
             fontWeight="900"
             fontFamily="'Inter', sans-serif"
             fill={step === 1 ? '#ffc700' : '#ffffff'}
@@ -123,22 +124,22 @@ const TyreSidewallIllustration = ({ step, width, profile, rim }) => {
         </g>
 
         {/* Separator / */}
-        <text x="212" y="86" textAnchor="middle" fontSize="18" fontWeight="800" fill="#94a3b8">/</text>
+        <text x="212" y="68" textAnchor="middle" fontSize="16" fontWeight="800" fill="#94a3b8">/</text>
 
         {/* Profile Group */}
-        <g transform="translate(242, 86)">
+        <g transform="translate(242, 68)">
           {/* Green Checkmark Badge if Step > 2 */}
           {step > 2 && (
-            <g transform="translate(0, -22)" filter="url(#badge-glow)">
-              <circle cx="0" cy="0" r="8" fill="#10b981" />
-              <path d="M -3.5 -0.5 L -1 2 L 4 -3" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <g transform="translate(0, -18)" filter="url(#badge-glow)">
+              <circle cx="0" cy="0" r="7.5" fill="#10b981" />
+              <path d="M -3 -0.5 L -1 1.8 L 3.5 -2.5" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </g>
           )}
           <text
             x="0"
             y="0"
             textAnchor="middle"
-            fontSize="18"
+            fontSize="16"
             fontWeight="900"
             fontFamily="'Inter', sans-serif"
             fill={step === 2 ? '#ffc700' : '#ffffff'}
@@ -149,19 +150,19 @@ const TyreSidewallIllustration = ({ step, width, profile, rim }) => {
         </g>
 
         {/* Rim Size Group */}
-        <g transform="translate(294, 86)">
+        <g transform="translate(294, 68)">
           {/* Green Checkmark Badge if Step === 3 and rim selected */}
           {rim && (
-            <g transform="translate(0, -22)" filter="url(#badge-glow)">
-              <circle cx="0" cy="0" r="8" fill="#10b981" />
-              <path d="M -3.5 -0.5 L -1 2 L 4 -3" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <g transform="translate(0, -18)" filter="url(#badge-glow)">
+              <circle cx="0" cy="0" r="7.5" fill="#10b981" />
+              <path d="M -3 -0.5 L -1 1.8 L 3.5 -2.5" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </g>
           )}
           <text
             x="0"
             y="0"
             textAnchor="middle"
-            fontSize="18"
+            fontSize="16"
             fontWeight="900"
             fontFamily="'Inter', sans-serif"
             fill={step === 3 ? '#ffc700' : '#ffffff'}
@@ -172,10 +173,10 @@ const TyreSidewallIllustration = ({ step, width, profile, rim }) => {
         </g>
 
         {/* Extra Sidewall Markings (91V OE) */}
-        <text x="352" y="94" textAnchor="middle" fontSize="13" fontWeight="700" fill="#cbd5e1" opacity="0.8">
+        <text x="350" y="76" textAnchor="middle" fontSize="12" fontWeight="700" fill="#cbd5e1" opacity="0.8">
           91V
         </text>
-        <text x="388" y="106" textAnchor="middle" fontSize="12" fontWeight="700" fill="#94a3b8" opacity="0.6">
+        <text x="384" y="86" textAnchor="middle" fontSize="11" fontWeight="700" fill="#94a3b8" opacity="0.6">
           OE
         </text>
       </svg>
@@ -196,6 +197,7 @@ const TyreSizeModal = ({ isOpen, onClose, onSwitchToRego }) => {
 
   const [showAllWidths, setShowAllWidths] = useState(false);
   const [showAllProfiles, setShowAllProfiles] = useState(false);
+  const [showAllRims, setShowAllRims] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
 
   if (!isOpen) return null;
@@ -253,7 +255,7 @@ const TyreSizeModal = ({ isOpen, onClose, onSwitchToRego }) => {
           <div className="header-left">
             {step > 1 && (
               <button type="button" className="header-back-btn" onClick={handleBack} title="Back">
-                <FiChevronLeft size={22} />
+                <FiChevronLeft size={20} />
               </button>
             )}
           </div>
@@ -280,7 +282,7 @@ const TyreSizeModal = ({ isOpen, onClose, onSwitchToRego }) => {
 
           {/* Close button */}
           <button type="button" className="header-close-btn" onClick={onClose} title="Close">
-            <FiX size={20} />
+            <FiX size={18} />
           </button>
 
           {/* Top Yellow Progress Bar */}
@@ -290,7 +292,7 @@ const TyreSizeModal = ({ isOpen, onClose, onSwitchToRego }) => {
           />
         </div>
 
-        {/* ── 2. Modal Body ── */}
+        {/* ── 2. Modal Body (Compact & Fitted, No Scrollbar) ── */}
         <div className="size-modal-body">
           {/* Top step counter */}
           <div className="step-counter-row">
@@ -435,8 +437,9 @@ const TyreSizeModal = ({ isOpen, onClose, onSwitchToRego }) => {
                 </button>
               </div>
 
+              {/* Rims Grid - 2 Neat Rows of 4 */}
               <div className="size-boxes-grid rim-grid">
-                {rimSizes.map((r) => (
+                {(showAllRims ? allRims : popularRims).map((r) => (
                   <button
                     key={r}
                     type="button"
