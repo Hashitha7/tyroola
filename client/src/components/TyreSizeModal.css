@@ -1,0 +1,491 @@
+/* ═════════════════════════════════════════════════════════════════════
+   TYRE SIZE MULTI-STEP MODAL (Matching Tyroola Official 3D Experience)
+   ═════════════════════════════════════════════════════════════════════ */
+
+.tyre-size-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 14, 22, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Card */
+.tyre-size-modal-card {
+  background: #ffffff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 620px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 199, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+  animation: modalPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes modalPopIn {
+  from {
+    transform: translateY(24px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ── 1. Top Black Header Bar ── */
+.size-modal-header {
+  background: #000000;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  position: relative;
+  color: #ffffff;
+}
+
+.header-left {
+  width: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.header-back-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.header-back-btn:hover {
+  color: #ffc700;
+  transform: translateX(-2px);
+}
+
+.header-title-box {
+  flex-grow: 1;
+  text-align: center;
+}
+.header-title-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+.highlight-val {
+  color: #ffc700;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.edit-pencil-icon {
+  font-size: 0.95rem;
+  color: #ffc700;
+}
+
+.header-close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: all 0.2s ease;
+}
+.header-close-btn:hover {
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.header-progress-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #ffc700;
+  box-shadow: 0 0 8px rgba(255, 199, 0, 0.8);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── 2. Modal Body ── */
+.size-modal-body {
+  padding: 1.2rem 2.2rem 1.6rem;
+  background: #ffffff;
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.step-counter-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.2rem;
+}
+.step-counter-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* ── 3. Tyre Sidewall Visual Arc ── */
+.tyre-arc-visual-wrapper {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto 0.8rem;
+  display: flex;
+  justify-content: center;
+}
+.tyre-arc-svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25));
+}
+
+/* ── 4. Step Content Pane ── */
+.step-content-pane {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.step-main-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.btn-size-help {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-size-help:hover {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.step-subtitle {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #64748b;
+  margin: 0 0 1rem;
+}
+
+/* ── 5. 3D Grid of Selection Boxes ── */
+.size-boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.4rem;
+}
+
+.size-box-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  height: 48px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.size-box-btn:hover {
+  border-color: #ffc700;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  background: #fffef5;
+}
+.size-box-btn.selected {
+  border: 2px solid #ffc700;
+  background: #fffdf0;
+  box-shadow: 0 0 12px rgba(255, 199, 0, 0.35);
+  color: #000000;
+}
+
+/* Profile and Rim grids */
+.profile-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+.rim-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Action button (Show all widths/profiles) */
+.action-row-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.btn-yellow-show-all {
+  background: #ffc700;
+  color: #000000;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem 1.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(255, 199, 0, 0.3);
+}
+.btn-yellow-show-all:hover {
+  background: #e0b000;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(255, 199, 0, 0.4);
+}
+
+/* Rego switch link */
+.rego-switch-link-row {
+  text-align: center;
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-bottom: 1.4rem;
+}
+.link-btn-rego {
+  background: none;
+  border: none;
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+.link-btn-rego:hover {
+  color: #1e40af;
+}
+
+/* ── 6. Refinement Section (Screenshot 5) ── */
+.refine-ratings-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1.4rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+.fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.refine-heading {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #334155;
+  margin: 0 0 1rem;
+}
+.refine-fields-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.refine-field {
+  display: flex;
+  flex-direction: column;
+}
+.refine-select {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  height: 44px;
+  padding: 0 0.85rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1e293b;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.refine-select:focus {
+  border-color: #ffc700;
+  box-shadow: 0 0 0 3px rgba(255, 199, 0, 0.2);
+}
+
+.btn-yellow-continue {
+  width: 100%;
+  background: #ffc700;
+  color: #000000;
+  font-size: 1.05rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 6px;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 4px 14px rgba(255, 199, 0, 0.35);
+}
+.btn-yellow-continue:hover {
+  background: #e0b000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 199, 0, 0.45);
+}
+
+/* ── 7. Bottom Help Strip ── */
+.size-modal-footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1rem;
+  text-align: center;
+}
+.chat-help-pill {
+  font-size: 0.86rem;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.chat-help-pill a {
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.smile-emoji {
+  color: #2563eb;
+}
+
+/* ── 8. Inner Help Tooltip / Modal ── */
+.help-inner-modal {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 100;
+  animation: modalFadeIn 0.2s ease-out;
+}
+.help-inner-card {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 480px;
+  padding: 1.6rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+.help-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.help-card-header h4 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.help-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #64748b;
+  cursor: pointer;
+}
+.help-card-body p {
+  font-size: 0.9rem;
+  color: #334155;
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+.help-card-body ul {
+  padding-left: 1.2rem;
+  margin: 0 0 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.help-card-body li {
+  font-size: 0.85rem;
+  color: #334155;
+  line-height: 1.4;
+}
+.btn-yellow-gotit {
+  width: 100%;
+  background: #ffc700;
+  color: #000000;
+  font-weight: 800;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+/* ── 9. Responsive Adjustments ── */
+@media (max-width: 640px) {
+  .size-modal-body {
+    padding: 1rem 1.2rem 1.4rem;
+  }
+  .size-boxes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.55rem;
+  }
+  .refine-fields-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .step-main-title {
+    font-size: 1.1rem;
+  }
+}
