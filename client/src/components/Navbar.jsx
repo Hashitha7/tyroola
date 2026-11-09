@@ -272,6 +272,12 @@ const Navbar = () => {
         <span>🎁 Up to <strong>$700 Gift Card</strong> on 4 selected Michelin tyres</span>
       </div>
 
+      {/* Mega Menu Blurred Backdrop */}
+      <div
+        className={`mega-backdrop ${tyresOpen ? 'active' : ''}`}
+        onClick={() => setTyresOpen(false)}
+      />
+
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-inner">
           {/* Logo */}
