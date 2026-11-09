@@ -135,3 +135,207 @@
   .deals-header { flex-direction: column; }
 }
 
+
+/* ══════════════════════════════════════════════════════
+   DEAL OFFER MODAL (matches reference screenshots)
+══════════════════════════════════════════════════════ */
+
+.deal-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: dealBackdropFadeIn 0.22s ease;
+}
+
+@keyframes dealBackdropFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.deal-modal-box {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.2rem 2rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45), 0 8px 24px rgba(0,0,0,0.25);
+  animation: dealModalSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dealModalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Close Button */
+.deal-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.deal-modal-close:hover {
+  background: #e0e0e0;
+  transform: scale(1.1);
+}
+
+/* Special Offer Pill */
+.deal-modal-pill {
+  background: #e8f4ff;
+  color: #0066cc;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 20px;
+  border: 1.5px solid #c3deff;
+  letter-spacing: 0.3px;
+}
+
+/* Title */
+.deal-modal-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #111111;
+  text-align: center;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Subtitle */
+.deal-modal-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #555555;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Info Box */
+.deal-modal-info-box {
+  width: 100%;
+  background: #f7f8fa;
+  border: 1.5px solid #e8eaed;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.deal-modal-info-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #333333;
+}
+.deal-modal-info-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #444444;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* CTA Button */
+.deal-modal-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #ffc700;
+  color: #111111;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(255, 199, 0, 0.35);
+  letter-spacing: 0.2px;
+}
+.deal-modal-cta-btn:hover {
+  background: #e6b400;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 199, 0, 0.5);
+}
+
+/* Disclaimer Box */
+.deal-modal-disclaimer-box {
+  width: 100%;
+  background: #f7f8fa;
+  border: 1.5px solid #e8eaed;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+.deal-modal-disclaimer-box strong {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #333333;
+  display: block;
+  margin-bottom: 8px;
+}
+.deal-modal-disclaimer-box ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.deal-modal-disclaimer-box ul li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #555555;
+  line-height: 1.5;
+}
+
+/* Scrollbar hide for modal */
+.deal-modal-box::-webkit-scrollbar { width: 4px; }
+.deal-modal-box::-webkit-scrollbar-track { background: transparent; }
+.deal-modal-box::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .deal-modal-box {
+    padding: 1.8rem 1.2rem 1.5rem;
+    max-height: 85vh;
+  }
+  .deal-modal-title {
+    font-size: 1.2rem;
+  }
+}
