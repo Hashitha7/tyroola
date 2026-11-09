@@ -123,8 +123,8 @@ const TyreCard = ({ tyre, delay = 0 }) => {
 };
 
 const FeaturedTyres = () => {
-  const [tyres, setTyres] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [tyres, setTyres] = useState(mockTyres);
+  const [loading, setLoading] = useState(false);
   const [activeFilter, setActiveFilter] = useState('All');
   const categories = ['All', 'SUV', 'Sedan', 'Sports', '4WD'];
 
@@ -132,7 +132,11 @@ const FeaturedTyres = () => {
     const fetchTyres = async () => {
       try {
         const { data } = await axios.get('/api/tyres?featured=true');
-        setTyres(data.data || mockTyres);
+        if (data && Array.isArray(data.data) && data.data.length > 0) {
+          setTyres(data.data);
+        } else {
+          setTyres(mockTyres);
+        }
       } catch {
         setTyres(mockTyres);
       } finally {

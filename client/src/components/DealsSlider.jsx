@@ -115,45 +115,63 @@ const DealOfferModal = ({ deal, onClose }) => {
   );
 };
 
+const defaultDeals = [
+  {
+    _id: '1',
+    title: 'Michelin – Up to $200 Gift Card',
+    brand: 'Michelin',
+    description: 'when you buy 4 selected Michelin tyres.',
+    discount: '$200 GIFT CARD',
+    validUntil: '2026-12-31',
+    badge: 'Gift Card',
+    color: '#1a1a2e',
+    image: h1,
+  },
+  {
+    _id: '2',
+    title: 'Michelin – Free Fitting',
+    brand: 'Michelin',
+    description: 'Buy 4 tyres, get free fitting on selected Michelin tyres only.',
+    discount: 'FREE FITTING',
+    validUntil: '2026-11-30',
+    badge: 'Free Service',
+    color: '#0f3460',
+    image: h2,
+  },
+  {
+    _id: '3',
+    title: 'BFGoodrich – Up to $150 Cashback',
+    brand: 'BFGoodrich',
+    description: 'when you buy 4 on-road BFGoodrich tyres.',
+    discount: '$150 CASHBACK',
+    validUntil: '2026-11-30',
+    badge: 'Cashback',
+    color: '#16213e',
+    image: h3,
+  },
+];
+
 const DealsSlider = () => {
-  const [deals, setDeals] = useState([]);
+  const [deals, setDeals] = useState(defaultDeals);
   const [current, setCurrent] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [activeDeal, setActiveDeal] = useState(null); // deal object for modal
 
   useEffect(() => {
     const fetchDeals = async () => {
       try {
         const { data } = await axios.get('/api/deals');
-        const formatted = (data.data || []).map((d, idx) => ({
-          ...d,
-          image: dealImages[idx % dealImages.length]
-        }));
-        setDeals(formatted);
+        if (data && Array.isArray(data.data) && data.data.length > 0) {
+          const formatted = data.data.map((d, idx) => ({
+            ...d,
+            image: dealImages[idx % dealImages.length]
+          }));
+          setDeals(formatted);
+        } else {
+          setDeals(defaultDeals);
+        }
       } catch {
-        setDeals([
-          {
-            _id: '1', title: 'Michelin – Up to $200 Gift Card', brand: 'Michelin',
-            description: 'when you buy 4 selected Michelin tyres.',
-            discount: '$200 GIFT CARD', validUntil: '2026-12-31',
-            badge: 'Gift Card', color: '#1a1a2e',
-            image: h1,
-          },
-          {
-            _id: '2', title: 'Michelin – Free Fitting', brand: 'Michelin',
-            description: 'Buy 4 tyres, get free fitting on selected Michelin tyres only.',
-            discount: 'FREE FITTING', validUntil: '2026-11-30',
-            badge: 'Free Service', color: '#0f3460',
-            image: h2,
-          },
-          {
-            _id: '3', title: 'BFGoodrich – Up to $150 Cashback', brand: 'BFGoodrich',
-            description: 'when you buy 4 on-road BFGoodrich tyres.',
-            discount: '$150 CASHBACK', validUntil: '2026-11-30',
-            badge: 'Cashback', color: '#16213e',
-            image: h3,
-          },
-        ]);
+        setDeals(defaultDeals);
       } finally {
         setLoading(false);
       }

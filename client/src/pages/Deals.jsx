@@ -18,14 +18,14 @@ const mockDeals = [
 ];
 
 const Deals = () => {
-  const [deals, setDeals] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [deals, setDeals] = useState(mockDeals);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetch = async () => {
       try {
         const { data } = await axios.get('/api/deals');
-        setDeals(data.data?.length > 0 ? data.data : mockDeals);
+        setDeals(Array.isArray(data?.data) && data.data.length > 0 ? data.data : mockDeals);
       } catch {
         setDeals(mockDeals);
       } finally {

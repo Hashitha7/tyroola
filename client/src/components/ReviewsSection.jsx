@@ -11,14 +11,18 @@ const mockReviews = [
 ];
 
 const ReviewsSection = () => {
-  const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [reviews, setReviews] = useState(mockReviews);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetch = async () => {
       try {
         const { data } = await axios.get('/api/reviews');
-        setReviews(data.data || mockReviews);
+        if (data && Array.isArray(data.data) && data.data.length > 0) {
+          setReviews(data.data);
+        } else {
+          setReviews(mockReviews);
+        }
       } catch {
         setReviews(mockReviews);
       } finally {
