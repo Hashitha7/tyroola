@@ -35,13 +35,37 @@
 }
 
 .nav-inner {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.75rem;
   height: 70px;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.nav-left-cluster {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-right-cluster {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-left: auto;
+}
+
+.nav-left-links,
+.nav-right-links {
+  display: flex;
+  list-style: none;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
 /* Logo */
@@ -520,11 +544,11 @@
 }
 .mobile-link:hover { color: var(--yellow); }
 
-@media (max-width: 1024px) {
+@media (max-width: 1140px) {
+  .nav-left-links,
+  .nav-right-links,
   .nav-links { display: none; }
-  .nav-phone { display: none; }
   .nav-toggle { display: flex; }
-  .nav-actions .nav-cta { display: none; }
   .mega-dropdown,
   .tyres-mega-dropdown { display: none; }
 }
