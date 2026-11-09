@@ -281,9 +281,9 @@ const servicesCategories = [
   },
   {
     id: 'repairs',
-    label: 'Repairs',
+    label: 'Car repairs',
     desc: 'Battery replacement, Alternator repair, spark plug replacement & more',
-    path: '/car-services',
+    path: '/car-repairs',
     color: '#00d4ff',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
