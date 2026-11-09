@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiShoppingCart, FiPhone, FiChevronDown, FiArrowRight } from 'react-icons/fi';
+import { FiMenu, FiX, FiShoppingCart, FiPhone, FiChevronDown, FiArrowRight, FiLock } from 'react-icons/fi';
 import './Navbar.css';
 
 /* ── Australia State Outline Icon Helper ── */
@@ -805,6 +805,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null); // 'tyres' | 'wheels' | 'services' | 'deals' | 'fitting' | 'guide' | 'help' | null
+  const [cartModalOpen, setCartModalOpen] = useState(false);
   const navRef = useRef(null);
   const timeoutRef = useRef(null);
   const { pathname } = useLocation();
@@ -827,10 +828,20 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  /* Close on route change */
+  /* Close on route change or ESC key */
   useEffect(() => {
     setActiveMenu(null);
     setMenuOpen(false);
+    setCartModalOpen(false);
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setActiveMenu(null);
+        setCartModalOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [pathname]);
 
   const handleMenuEnter = (menuName) => {
@@ -1322,10 +1333,18 @@ const Navbar = () => {
 
             {/* Cart Icon & Actions */}
             <div className="nav-actions">
-              <Link to="/cart" className="nav-cart" aria-label="Shopping Cart">
+              <button
+                type="button"
+                className="nav-cart"
+                onClick={() => {
+                  setActiveMenu(null);
+                  setCartModalOpen(true);
+                }}
+                aria-label="Shopping Cart"
+              >
                 <FiShoppingCart size={20} />
                 <span className="cart-badge">0</span>
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -1344,6 +1363,17 @@ const Navbar = () => {
           <Link to="/how-it-works" className="mobile-link" onClick={() => setMenuOpen(false)}>Fitting & Delivery</Link>
           <Link to="/how-it-works" className="mobile-link" onClick={() => setMenuOpen(false)}>Tyre Guide</Link>
           <Link to="/contact" className="mobile-link" onClick={() => setMenuOpen(false)}>Help</Link>
+          <button
+            type="button"
+            className="mobile-link"
+            style={{ textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}
+            onClick={() => {
+              setMenuOpen(false);
+              setCartModalOpen(true);
+            }}
+          >
+            🛒 Cart Quick View
+          </button>
           <Link
             to="/tyres"
             className="btn btn-primary"
@@ -1354,6 +1384,58 @@ const Navbar = () => {
           </Link>
         </div>
       </nav>
+
+      {/* ── Cart Quick View Modal & Blurred Backdrop (Screenshot matching) ── */}
+      {cartModalOpen && (
+        <div
+          className="cart-modal-backdrop"
+          onClick={() => setCartModalOpen(false)}
+        >
+          <div
+            className="cart-quickview-card"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="cart-quickview-header">
+              <span className="cart-quickview-title">Cart Quick View</span>
+              <button
+                type="button"
+                className="cart-quickview-close"
+                onClick={() => setCartModalOpen(false)}
+                aria-label="Close"
+              >
+                <FiX size={18} />
+              </button>
+            </div>
+
+            {/* Body */}
+            <div className="cart-quickview-body">
+              <button
+                type="button"
+                className="btn-quickview-cart"
+                onClick={() => {
+                  setCartModalOpen(false);
+                  navigate('/tyres');
+                }}
+              >
+                Shopping Cart
+              </button>
+
+              <button
+                type="button"
+                className="btn-quickview-checkout"
+                onClick={() => {
+                  setCartModalOpen(false);
+                  navigate('/tyres');
+                }}
+              >
+                <FiLock className="checkout-lock-icon" size={16} />
+                <span>Secure Checkout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
