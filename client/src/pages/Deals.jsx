@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
-import { FiArrowRight, FiClock, FiTag } from 'react-icons/fi';
+import { FiArrowRight, FiClock } from 'react-icons/fi';
 import axios from 'axios';
+import h1 from '../Images/Hotdeals/H1.png';
+import h2 from '../Images/Hotdeals/H2.png';
+import h3 from '../Images/Hotdeals/H3.png';
 import './Deals.css';
+
+const dealImages = [h1, h2, h3];
 
 const mockDeals = [
   { _id: '1', title: 'Michelin – Up to $200 Gift Card', brand: 'Michelin', description: 'when you buy 4 selected Michelin tyres. Gift card sent via email within 2 business days of qualifying purchase.', discount: '$200 Gift Card', validUntil: '2026-12-31', badge: 'Gift Card', color: '#1a1a2e' },
@@ -51,16 +56,16 @@ const Deals = () => {
           </div>
         ) : (
           <div className="deals-page-grid">
-            {deals.map((deal, i) => (
-              <div key={deal._id} className="deal-page-card card-3d" style={{ animationDelay: `${i * 0.08}s` }}>
-                <div className="deal-page-top" style={{ background: `linear-gradient(135deg, ${deal.color || '#1a1a2e'}, #050508)` }}>
-                  <div className="deal-page-brand">
-                    <FiTag size={12} />
-                    {deal.brand}
+            {deals.map((deal, i) => {
+              const cardImg = deal.image && (deal.image.startsWith('data:') || deal.image.startsWith('blob:') || deal.image.startsWith('/') || deal.image.includes('Hotdeals')) 
+                ? deal.image 
+                : dealImages[i % dealImages.length];
+              return (
+                <div key={deal._id} className="deal-page-card card-3d" style={{ animationDelay: `${i * 0.08}s` }}>
+                  <div className="deal-page-top">
+                    <img src={cardImg} alt={deal.title} className="deal-page-top-img" />
+                    <div className="deal-page-top-overlay" />
                   </div>
-                  <div className="deal-page-discount">{deal.discount}</div>
-                  <div className="deal-page-emoji">🛞</div>
-                </div>
                 <div className="deal-page-body">
                   <div className="deal-page-badge badge badge-yellow">{deal.badge}</div>
                   <h3 className="deal-page-title">{deal.title}</h3>
@@ -76,8 +81,9 @@ const Deals = () => {
                   </a>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
+        </div>
         )}
       </div>
     </main>

@@ -26,42 +26,40 @@
 
 .deal-card-top {
   position: relative;
-  padding: 2rem;
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  height: 230px;
+  min-height: 230px;
   overflow: hidden;
+  background: #090b12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.deal-card-top::before {
-  content: '';
+
+.deal-top-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  display: block;
+}
+
+.deal-card:hover .deal-top-img {
+  transform: scale(1.06);
+  filter: brightness(1.08);
+}
+
+.deal-top-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,215,0,0.05), transparent);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(10, 12, 20, 0.6) 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
-.deal-brand {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--yellow);
-  margin-bottom: 0.5rem;
-}
-.deal-discount {
-  font-family: 'Orbitron', monospace;
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1;
-  text-shadow: 0 0 20px rgba(255,215,0,0.4);
-}
-.deal-tyre-img {
-  position: absolute;
-  right: -10px;
-  bottom: -10px;
-  font-size: 5rem;
-  opacity: 0.15;
-  transform: rotate(-20deg);
+
+.deal-card:hover .deal-top-overlay {
+  opacity: 0.35;
 }
 
 .deal-card-body {
