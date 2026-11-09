@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { FiPlay, FiClock, FiX } from 'react-icons/fi';
+import v1 from '../Images/Videos/v1.jpg';
+import v2 from '../Images/Videos/v2.jpg';
+import v3 from '../Images/Videos/v3.jpg';
 import './VideoSection.css';
 
 const videos = [
@@ -7,26 +10,26 @@ const videos = [
     id: 1,
     title: 'Online Tyre Shopping Made Easy With Tyroola!',
     duration: '1:25',
-    thumbnail: 'https://i.ytimg.com/vi/ZL7CtXkQdp8/hqdefault.jpg',
+    thumbnail: v1,
     tint: 'rgba(255,215,0,0.15)',
-    youtubeId: 'ZL7CtXkQdp8',
+    youtubeId: 'd6p8UnVFCsM',
   },
   {
     id: 2,
     title: 'Join the online revolution as seen on TV. Buy Tyres Online',
     duration: '0:30',
-    thumbnail: 'https://i.ytimg.com/vi/Uy5A6Tp5oVw/hqdefault.jpg',
+    thumbnail: v2,
     tint: 'rgba(255,100,0,0.2)',
-    youtubeId: 'Uy5A6Tp5oVw',
+    youtubeId: 'jbPs-ATa_YM',
     badge: '500+ installers',
   },
   {
     id: 3,
     title: 'Autoexpert John Cadogan Reveals How To Save Money And Time Buying Tyres At Tyroola.',
-    duration: '1:1',
-    thumbnail: 'https://i.ytimg.com/vi/nFwm8gCAtF0/hqdefault.jpg',
+    duration: '1:14',
+    thumbnail: v3,
     tint: 'rgba(100,0,200,0.15)',
-    youtubeId: 'nFwm8gCAtF0',
+    youtubeId: 'Y67zcbtkPUQ',
   },
 ];
 
