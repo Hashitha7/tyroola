@@ -21,7 +21,7 @@ const steps = [
     title: 'Compare & save',
     desc: 'Compare tyres, choose from many brands, and pick the best deal for you.',
     color: '#00d4ff',
-    action: 'tyres',       // navigate to /tyres
+    action: 'tyre-size',   // opens TyreSizeModal
   },
   {
     num: '03',
@@ -29,7 +29,7 @@ const steps = [
     title: 'Fast delivery & fitting',
     desc: 'We promise smooth delivery to one of our fitting partners or to your home.',
     color: '#7c3aed',
-    action: 'tyres',       // navigate to /tyres
+    action: 'tyre-size',   // opens TyreSizeModal
   },
 ];
 
