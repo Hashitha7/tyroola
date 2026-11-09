@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="steel-black" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#242833"/>
+      <stop offset="50%" stop-color="#15171d"/>
+      <stop offset="85%" stop-color="#0a0b0d"/>
+      <stop offset="100%" stop-color="#020304"/>
+    </radialGradient>
+    <radialGradient id="black-dish" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#2b313d"/>
+      <stop offset="65%" stop-color="#12141a"/>
+      <stop offset="100%" stop-color="#060709"/>
+    </radialGradient>
+    <filter id="grudge-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Shadow & Outer Black Steel Lip -->
+  <circle cx="200" cy="200" r="185" fill="#000" filter="url(#grudge-shadow)"/>
+  <circle cx="200" cy="200" r="180" fill="url(#steel-black)" stroke="#2d323e" stroke-width="2.5"/>
+
+  <!-- Signature White Pinstripe around Rim Perimeter (Grudge Offroad characteristic) -->
+  <circle cx="200" cy="200" r="172" fill="none" stroke="#ffffff" stroke-width="2.2" opacity="0.95"/>
+  <circle cx="200" cy="200" r="169" fill="none" stroke="#e02424" stroke-width="0.8" opacity="0.7"/>
+
+  <!-- Stepped Inner Barrel -->
+  <circle cx="200" cy="200" r="163" fill="#08090c" stroke="#1f232b" stroke-width="2"/>
+  <circle cx="200" cy="200" r="156" fill="url(#black-dish)"/>
+
+  <!-- Valve Stem -->
+  <rect x="200" y="38" width="6" height="12" rx="3" fill="#333" stroke="#fff" stroke-width="0.5"/>
+
+  <!-- 8 Stamped Circular Modular Cutouts -->
+  <g transform="translate(200, 200)">
+    <g id="grudge-cutout">
+      <!-- Stamped Steel Bevel -->
+      <circle cx="0" cy="-95" r="23" fill="#1b1e26" stroke="#2e3442" stroke-width="1.5"/>
+      <!-- Hole interior -->
+      <circle cx="0" cy="-95" r="19" fill="#000000"/>
+      <!-- Top edge light reflection -->
+      <path d="M-13,-107 A 18 18 0 0 1 13 -107" fill="none" stroke="#4a5568" stroke-width="1.5"/>
+    </g>
+    <use href="#grudge-cutout" transform="rotate(45)"/>
+    <use href="#grudge-cutout" transform="rotate(90)"/>
+    <use href="#grudge-cutout" transform="rotate(135)"/>
+    <use href="#grudge-cutout" transform="rotate(180)"/>
+    <use href="#grudge-cutout" transform="rotate(225)"/>
+    <use href="#grudge-cutout" transform="rotate(270)"/>
+    <use href="#grudge-cutout" transform="rotate(315)"/>
+
+    <!-- Center Stamped Hub Flange -->
+    <circle cx="0" cy="0" r="58" fill="#13151b" stroke="#252a36" stroke-width="2"/>
+    <circle cx="0" cy="0" r="48" fill="#0c0e12" stroke="#1a1e27" stroke-width="1"/>
+
+    <!-- 5 Heavy Chrome Lug Nuts (Australian 5-Stud) -->
+    <circle cx="0" cy="-33" r="5.5" fill="#f1f5f9" stroke="#000" stroke-width="2"/>
+    <circle cx="31.4" cy="-10.2" r="5.5" fill="#f1f5f9" stroke="#000" stroke-width="2"/>
+    <circle cx="19.4" cy="26.7" r="5.5" fill="#f1f5f9" stroke="#000" stroke-width="2"/>
+    <circle cx="-19.4" cy="26.7" r="5.5" fill="#f1f5f9" stroke="#000" stroke-width="2"/>
+    <circle cx="-31.4" cy="-10.2" r="5.5" fill="#f1f5f9" stroke="#000" stroke-width="2"/>
+
+    <!-- Center Cap (Grudge Steel Push-Through Cap) -->
+    <circle cx="0" cy="0" r="23" fill="#1a1d24" stroke="#ffffff" stroke-width="1.8"/>
+    <circle cx="0" cy="0" r="18" fill="#0b0d11"/>
+    <!-- Grudge Shield / V emblem -->
+    <path d="M-7,-5 L0,-9 L7,-5 L7,2 L0,8 L-7,2 Z" fill="#ffffff" opacity="0.9"/>
+    <text x="0" y="2" font-family="'Orbitron', sans-serif" font-size="5.5" font-weight="900" fill="#000" text-anchor="middle">G</text>
+  </g>
+</svg>

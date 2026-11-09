@@ -202,7 +202,7 @@ const wheelsCategories = [
     id: 'car-wheels',
     label: 'Car wheels',
     desc: 'Discover Advanti, Enkei, Konig, Lowenhart, Marriba and many more',
-    path: '/tyres',
+    path: '/wheels',
     color: '#ffd700',
     icon: (
       <svg viewBox="0 0 64 36" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -217,7 +217,7 @@ const wheelsCategories = [
     id: '4x4-wheels',
     label: '4x4 & SUV Rims',
     desc: 'Heavy duty off-road rims from Fuel, KMC, Method & King Wheels',
-    path: '/tyres',
+    path: '/wheels?type=4x4',
     color: '#ff6b35',
     icon: (
       <svg viewBox="0 0 72 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -232,7 +232,7 @@ const wheelsCategories = [
     id: 'alloy-wheels',
     label: 'Alloy Wheels',
     desc: 'Lightweight performance alloys engineered for strength & style',
-    path: '/tyres',
+    path: '/wheels?type=alloy',
     color: '#00d4ff',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2">
@@ -249,7 +249,7 @@ const wheelsCategories = [
     id: 'steel-wheels',
     label: 'Steel Wheels',
     desc: 'Rugged & durable steelies built for demanding Australian conditions',
-    path: '/tyres',
+    path: '/wheels?type=steel',
     color: '#00e676',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2">
@@ -981,8 +981,8 @@ const Navbar = () => {
                 <button
                   className={`nav-link mega-trigger ${activeMenu === 'wheels' ? 'dropdown-active' : ''}`}
                   onClick={() => {
-                    if (activeMenu === 'wheels') navigate('/tyres');
-                    else setActiveMenu('wheels');
+                    navigate('/wheels');
+                    setActiveMenu(null);
                   }}
                   aria-expanded={activeMenu === 'wheels'}
                 >
@@ -1000,7 +1000,7 @@ const Navbar = () => {
                   <div className="mega-dropdown-inner">
                     <div className="mega-header">
                       <span className="mega-header-title">Rims, Mags & Wheels Online</span>
-                      <Link to="/tyres" className="mega-header-cta" onClick={() => setActiveMenu(null)}>
+                      <Link to="/wheels" className="mega-header-cta" onClick={() => setActiveMenu(null)}>
                         Shop All Wheels <FiArrowRight />
                       </Link>
                     </div>
@@ -1388,7 +1388,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
           <Link to="/tyres" className="mobile-link" onClick={() => setMenuOpen(false)}>Tyres</Link>
-          <Link to="/tyres" className="mobile-link" onClick={() => setMenuOpen(false)}>Wheels</Link>
+          <Link to="/wheels" className="mobile-link" onClick={() => setMenuOpen(false)}>Wheels</Link>
           <Link to="/contact" className="mobile-link" onClick={() => setMenuOpen(false)}>Services/Repairs</Link>
           <Link to="/deals" className="mobile-link" onClick={() => setMenuOpen(false)}>Deals</Link>
           <Link to="/how-it-works" className="mobile-link" onClick={() => setMenuOpen(false)}>Fitting & Delivery</Link>

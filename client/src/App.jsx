@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Tyres from './pages/Tyres';
 import TyreDetail from './pages/TyreDetail';
+import Wheels from './pages/Wheels';
 import Deals from './pages/Deals';
 import HowItWorks from './pages/HowItWorks';
 import Contact from './pages/Contact';
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/tyres" element={<Tyres />} />
           <Route path="/tyres/:id" element={<TyreDetail />} />
+          <Route path="/wheels" element={<Wheels />} />
           <Route path="/deals" element={<Deals />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/contact" element={<Contact />} />
