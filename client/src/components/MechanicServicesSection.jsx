@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
+import m1 from '../Images/Mechanic/m1.jpg';
+import m2 from '../Images/Mechanic/m2.jpg';
+import m3 from '../Images/Mechanic/m3.jpg';
 import './MechanicServicesSection.css';
 
 const services = [
@@ -8,7 +11,7 @@ const services = [
     title: 'Car Services',
     subtitle: 'Choose from logbook or basic maintenance services',
     badge: 'Logbook & Basic',
-    img: 'https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=600&q=80',
+    img: m1,
     icon: '🔧',
     color: '#ffc700',
     features: ['Logbook Servicing', 'Oil & Filter Change', 'Engine Diagnostics'],
@@ -18,7 +21,7 @@ const services = [
     title: 'Auto Repairs',
     subtitle: 'Get your car back on the road today!',
     badge: 'Fast Turnaround',
-    img: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80',
+    img: m2,
     icon: '⚡',
     color: '#00d4ff',
     features: ['Brakes & Suspension', 'Clutch & Gearbox', 'Battery & Electrical'],
@@ -28,7 +31,7 @@ const services = [
     title: 'Vehicle Inspections',
     subtitle: 'Get your car professionally inspected!',
     badge: 'Certified Check',
-    img: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80',
+    img: m3,
     icon: '📋',
     color: '#00e676',
     features: ['Pre-Purchase Check', 'Roadworthy Certificate', 'Safety Audit'],
