@@ -1,5 +1,8 @@
-.featured-section { background: var(--black); }
+.featured-section {
+  background: linear-gradient(180deg, var(--black) 0%, var(--dark) 60%, var(--black) 100%);
+}
 
+/* ===== FEATURED HEADER ===== */
 .featured-header {
   display: flex;
   justify-content: space-between;
@@ -9,7 +12,7 @@
   gap: 1rem;
 }
 
-/* Filter Tabs */
+/* ===== FILTER TABS ===== */
 .filter-tabs {
   display: flex;
   gap: 0.5rem;
@@ -17,185 +20,264 @@
   flex-wrap: wrap;
 }
 .filter-tab {
-  padding: 0.5rem 1.25rem;
+  padding: 0.45rem 1.2rem;
   border-radius: 25px;
-  border: 1px solid rgba(255,215,0,0.2);
+  border: 1px solid rgba(255, 215, 0, 0.2);
   background: transparent;
   color: var(--text-muted);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.25s ease;
   letter-spacing: 0.5px;
 }
-.filter-tab:hover { border-color: rgba(255,215,0,0.5); color: var(--yellow); }
+.filter-tab:hover {
+  border-color: rgba(255, 215, 0, 0.5);
+  color: var(--yellow);
+  background: rgba(255, 215, 0, 0.05);
+}
 .filter-tab.active {
-  background: rgba(255,215,0,0.1);
+  background: rgba(255, 215, 0, 0.1);
   color: var(--yellow);
   border-color: var(--yellow);
-  box-shadow: inset 0 0 10px rgba(255,215,0,0.05);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.12);
 }
 
-/* Tyres Grid */
+/* ===== TYRES GRID ===== */
 .tyres-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
   gap: 1.75rem;
 }
 
-/* Tyre Card */
+/* ===== TYRE CARD — 3D PREMIUM ===== */
 .tyre-card {
   display: flex;
   flex-direction: column;
   position: relative;
   animation: fade-up 0.6s ease both;
   cursor: pointer;
+  border-radius: 18px;
+  background: linear-gradient(165deg, #121520, #090c14);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.4s ease;
 }
 
+.tyre-card:hover {
+  transform: translateY(-10px) rotateX(2deg) scale(1.015);
+  border-color: rgba(255, 215, 0, 0.45);
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 215, 0, 0.12),
+    0 0 40px rgba(255, 215, 0, 0.08);
+}
+
+/* ===== TOP BADGE (BEST SELLER / NEW / CASHBACK) ===== */
 .tyre-badge {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0.9rem;
+  left: 0.9rem;
   z-index: 10;
   background: var(--gradient);
   color: #000;
-  padding: 0.2rem 0.6rem;
+  padding: 0.22rem 0.65rem;
   border-radius: 10px;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.5px;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.7px;
   text-transform: uppercase;
-}
-.tyre-discount-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 10;
-  background: #ef4444;
-  color: white;
-  padding: 0.2rem 0.6rem;
-  border-radius: 10px;
-  font-size: 0.75rem;
-  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* ===== DISCOUNT BADGE (%-14, -18…) ===== */
+.tyre-discount-badge {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 10;
+  background: #ef4444;
+  color: #fff;
+  padding: 0.22rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* ===== IMAGE AREA ===== */
 .tyre-img-wrap {
   position: relative;
   overflow: hidden;
-  height: 200px;
-  border-radius: 12px 12px 0 0;
-  background: linear-gradient(135deg, var(--dark2), var(--dark3));
+  height: 210px;
+  flex-shrink: 0;
+  background: #0b0d16;
 }
+
 .tyre-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  object-position: center;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  display: block;
+  filter: brightness(0.92);
 }
-.tyre-card:hover .tyre-img { transform: scale(1.08); }
+.tyre-card:hover .tyre-img {
+  transform: scale(1.09);
+  filter: brightness(1.05);
+}
+
+/* Gradient overlay on image bottom */
 .tyre-img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10,10,15,0.7) 0%, transparent 60%);
+  background: linear-gradient(
+    to top,
+    rgba(9, 12, 20, 0.85) 0%,
+    rgba(9, 12, 20, 0.2) 50%,
+    transparent 100%
+  );
 }
+
+/* Category chip on image bottom-right */
 .tyre-category-tag {
   position: absolute;
   bottom: 0.75rem;
   right: 0.75rem;
-  background: rgba(255,215,0,0.15);
-  border: 1px solid rgba(255,215,0,0.3);
+  z-index: 5;
+  background: rgba(255, 215, 0, 0.18);
+  border: 1px solid rgba(255, 215, 0, 0.4);
   color: var(--yellow);
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.2rem 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.22rem 0.6rem;
   border-radius: 8px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
 }
 
+/* Neon accent line at top of body */
+.tyre-card-accent {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #FFD700 50%, transparent);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.tyre-card:hover .tyre-card-accent {
+  opacity: 1;
+}
+
+/* ===== CARD BODY ===== */
 .tyre-body {
-  padding: 1.25rem;
+  padding: 1.2rem 1.2rem 1.4rem;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   flex: 1;
 }
+
 .tyre-brand {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   color: var(--yellow);
+  margin-bottom: 0.1rem;
 }
+
 .tyre-model {
   font-size: 1rem;
   font-weight: 700;
   color: var(--white);
   line-height: 1.3;
 }
+
 .tyre-size-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  margin-top: 0.1rem;
 }
+
 .tyre-size {
   font-family: 'Orbitron', monospace;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
   letter-spacing: 1px;
 }
+
 .tyre-rating {
   display: flex;
   align-items: center;
   gap: 0.3rem;
 }
-.star { color: #555; }
-.star.filled { color: #FFD700; fill: #FFD700; }
-.rating-count { font-size: 0.7rem; color: var(--text-muted); }
 
+.star        { color: #3a3a4a; }
+.star.filled { color: #FFD700; fill: #FFD700; }
+.rating-count { font-size: 0.68rem; color: var(--text-muted); }
+
+/* ===== PRICING ===== */
 .tyre-pricing {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
-  margin-top: 0.25rem;
+  margin-top: 0.4rem;
 }
 .tyre-price {
   font-family: 'Orbitron', monospace;
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--yellow);
+  text-shadow: 0 0 16px rgba(255, 215, 0, 0.3);
 }
 .tyre-original-price {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   text-decoration: line-through;
+  opacity: 0.7;
 }
 .per-tyre {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
 }
 
+/* ===== ACTION BUTTONS ===== */
 .tyre-actions {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
 }
 .tyre-detail-btn {
-  font-size: 0.8rem;
-  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  padding: 0.55rem 0.9rem;
   flex: 1;
+  letter-spacing: 0.5px;
+  font-weight: 700;
 }
 .tyre-cart-btn {
-  font-size: 0.8rem;
-  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  padding: 0.55rem 0.9rem;
   flex: 1;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
 }
 
-@media (max-width: 768px) {
-  .tyres-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .tyres-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .tyres-grid { grid-template-columns: 1fr; gap: 1rem; }
   .featured-header { flex-direction: column; }
+  .tyre-img-wrap { height: 190px; }
 }
-@media (max-width: 480px) {
-  .tyres-grid { grid-template-columns: 1fr; }
-}
-

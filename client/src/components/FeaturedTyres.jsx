@@ -45,8 +45,8 @@ const TyreCard = ({ tyre, delay = 0 }) => {
     : 0;
 
   return (
-    <div className="tyre-card card-3d" style={{ animationDelay: `${delay}s` }}>
-      {/* Badge */}
+    <div className="tyre-card" style={{ animationDelay: `${delay}s` }}>
+      {/* Badges */}
       {tyre.badge && <div className="tyre-badge">{tyre.badge}</div>}
       {discount > 0 && <div className="tyre-discount-badge">-{discount}%</div>}
 
@@ -56,6 +56,9 @@ const TyreCard = ({ tyre, delay = 0 }) => {
         <div className="tyre-img-overlay" />
         <div className="tyre-category-tag">{tyre.category}</div>
       </div>
+
+      {/* Neon top-of-body accent */}
+      <div className="tyre-card-accent" />
 
       {/* Body */}
       <div className="tyre-body">
@@ -82,7 +85,8 @@ const TyreCard = ({ tyre, delay = 0 }) => {
             Details
           </Link>
           <button className="btn btn-primary tyre-cart-btn">
-            <FiShoppingCart size={14} /> Add to Cart
+            <FiShoppingCart size={14} />
+            Add to Cart
           </button>
         </div>
       </div>

@@ -183,6 +183,13 @@
 }
 
 @media (max-width: 600px) {
-  .step-title { font-size: 1rem; margin: 0.4rem 1rem 0; }
-  .step-desc  { font-size: 0.82rem; margin: 0.5rem 1rem 0; }
+  .step-title {
+    font-size: 1rem;
+    margin: 0.4rem 1rem 0;
+  }
+
+  .step-desc {
+    font-size: 0.82rem;
+    margin: 0.5rem 1rem 0;
+  }
 }
