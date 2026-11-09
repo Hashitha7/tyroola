@@ -193,3 +193,42 @@
     margin: 0.5rem 1rem 0;
   }
 }
+
+/* ══ Clickable Step Cards ══ */
+.hiw-step-clickable {
+  cursor: pointer;
+  outline: none;
+}
+
+.hiw-step-clickable:hover {
+  transform: translateY(-6px) rotateX(3deg);
+  border-color: rgba(255, 215, 0, 0.35);
+  box-shadow:
+    0 0 0 1.5px rgba(255,215,0,0.18),
+    0 20px 50px rgba(0,0,0,0.5),
+    0 0 30px rgba(255,215,0,0.08);
+}
+
+.hiw-step-clickable:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* "Get started →" hint at bottom of card */
+.step-click-hint {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.hiw-step-clickable:hover .step-click-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
