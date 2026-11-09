@@ -4,7 +4,7 @@
 
 .pinned-search-bar-wrapper {
   position: fixed;
-  top: 12px;
+  top: 110px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9990;
@@ -16,12 +16,12 @@
 
 @keyframes slideDownPinned {
   from {
-    top: -60px;
+    top: 60px;
     opacity: 0;
     transform: translateX(-50%) scale(0.95);
   }
   to {
-    top: 12px;
+    top: 110px;
     opacity: 1;
     transform: translateX(-50%) scale(1);
   }
@@ -148,7 +148,7 @@
 @media (max-width: 768px) {
   .pinned-search-bar-wrapper {
     width: 95%;
-    top: 8px;
+    top: 100px;
   }
   .pinned-label-yellow {
     display: none; /* Hide label on mobile to fit nicely */
