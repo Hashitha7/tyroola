@@ -25,6 +25,7 @@
   gap: 2.25rem;
 }
 
+/* ===== VIDEO CARD ===== */
 .video-card {
   display: flex;
   flex-direction: column;
@@ -34,6 +35,7 @@
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
 .video-card:hover {
@@ -47,7 +49,6 @@
   width: 100%;
   height: 220px;
   overflow: hidden;
-  cursor: pointer;
   background: #000;
 }
 
@@ -169,15 +170,78 @@
   font-weight: 500;
 }
 
+/* ===== LIGHTBOX MODAL ===== */
+.video-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: lightbox-in 0.25s ease both;
+}
+
+@keyframes lightbox-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.video-lightbox-inner {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 215, 0, 0.15);
+  animation: lightbox-scale 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes lightbox-scale {
+  from { transform: scale(0.88); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.video-lightbox-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.video-lightbox-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10;
+}
+
+.video-lightbox-close:hover {
+  background: rgba(255, 60, 60, 0.6);
+  transform: scale(1.1) rotate(90deg);
+}
+
 @media (max-width: 1024px) {
-  .videos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .videos-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 680px) {
-  .videos-grid {
-    grid-template-columns: 1fr;
-  }
+  .videos-grid { grid-template-columns: 1fr; }
+  .video-lightbox-inner { border-radius: 10px; }
 }
+
 
