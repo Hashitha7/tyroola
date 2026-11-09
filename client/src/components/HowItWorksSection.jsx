@@ -1,34 +1,28 @@
 import { FiArrowRight } from 'react-icons/fi';
-import TyreCanvas from './TyreCanvas';
+import Step3DIconCanvas from './Step3DIconCanvas';
 import './HowItWorksSection.css';
 
 const steps = [
   {
     num: '01',
-    icon: '⚙️',
+    iconType: 'tyre',
     title: 'Enter your tyre size',
     desc: 'Find it on the sidewall of your current tyre e.g. 265/65R17.',
     color: '#FFD700',
-    canvas: true,
-    rimColor: '#c0a020',
   },
   {
     num: '02',
-    icon: '💰',
+    iconType: 'wallet',
     title: 'Compare & save',
     desc: 'Compare tyres, choose from many brands, and pick the best deal for you.',
     color: '#00d4ff',
-    canvas: true,
-    rimColor: '#00aacc',
   },
   {
     num: '03',
-    icon: '🚚',
+    iconType: 'delivery',
     title: 'Fast delivery & fitting',
     desc: 'We promise smooth delivery to one of our fitting partners or to your home.',
     color: '#7c3aed',
-    canvas: true,
-    rimColor: '#6030cc',
   },
 ];
 
@@ -42,37 +36,34 @@ const HowItWorksSection = () => {
         <div className="hiw-header">
           <h2 className="section-title">How It Works</h2>
           <p className="section-subtitle">
-            It's easy as 1, 2, 3. Just enter your size, choose, & get it delivered.
+            It's easy as 1, 2, 3. Just enter your size, choose, &amp; get it delivered.
           </p>
         </div>
 
-        {/* Arrow connector */}
         <div className="hiw-steps">
           {steps.map((step, i) => (
-            <div key={i} className="hiw-step card-3d">
-              {/* Step Number */}
-              <div className="step-num" style={{ color: step.color }}>
-                {step.num}
-              </div>
+            <div key={i} className="hiw-step card-3d" style={{ animationDelay: `${i * 0.15}s` }}>
+              {/* Step Number background */}
+              <div className="step-num" style={{ color: step.color }}>{step.num}</div>
 
-              {/* 3D Tyre mini */}
+              {/* Accent glow overlay */}
+              <div className="step-glow" style={{ background: `radial-gradient(circle at 50% 40%, ${step.color}20, transparent 72%)` }} />
+
+              {/* 3D Icon Canvas */}
               <div className="step-canvas">
-                <TyreCanvas height="180px" rimColor={step.rimColor} rotate={true} showParticles={false} />
+                <Step3DIconCanvas type={step.iconType} color={step.color} height="190px" />
               </div>
 
-              {/* Glow circle */}
-              <div className="step-glow" style={{ background: `radial-gradient(circle at center, ${step.color}22, transparent 70%)` }} />
+              {/* Top neon accent line */}
+              <div className="step-accent-line" style={{ background: `linear-gradient(90deg, transparent, ${step.color}, transparent)` }} />
 
-              <div className="step-icon">{step.icon}</div>
-              <h3 className="step-title" style={{ color: step.color }}>
-                {step.title}
-              </h3>
+              <h3 className="step-title" style={{ color: step.color }}>{step.title}</h3>
               <p className="step-desc">{step.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* Connector arrows */}
+        {/* Connector arrows between cards */}
         <div className="hiw-connectors">
           <FiArrowRight size={24} style={{ color: 'rgba(255,215,0,0.4)' }} />
           <FiArrowRight size={24} style={{ color: 'rgba(255,215,0,0.4)' }} />
