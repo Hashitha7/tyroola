@@ -56,18 +56,18 @@
 .hero {
   position: relative;
   min-height: 520px;
-  background: linear-gradient(135deg, #2b2e34 0%, #3a3f47 60%, #464c54 100%);
+  background-color: #383c42;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   padding: 3rem 0 4.5rem;
 }
 
-/* Chevron Stripes in Background (as in screenshot) */
+/* Chevron Stripes in Background (handled by B1.jpg) */
 .hero-chevron-bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
+  display: none;
 }
 
 .chevron-stripe {

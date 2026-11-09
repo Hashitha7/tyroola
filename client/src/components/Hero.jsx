@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiArrowRight, FiX } from 'react-icons/fi';
+import heroBg from '../Images/Background/B1.jpg';
 import './Hero.css';
 
 const Hero = () => {
@@ -66,7 +67,7 @@ const Hero = () => {
       </div>
 
       {/* Main Hero Section */}
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: `url(${heroBg})` }}>
         {/* Chevron Diagonal Graphics Background */}
         <div className="hero-chevron-bg">
           <div className="chevron-stripe stripe-1" />
