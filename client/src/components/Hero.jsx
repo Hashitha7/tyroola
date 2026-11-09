@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { FiArrowRight, FiX } from 'react-icons/fi';
 import heroBg from '../Images/Background/B1.jpg';
 import car1 from '../Images/Cars/c1.png';
-import car2 from '../Images/Cars/c2.jpg';
-import car3 from '../Images/Cars/c3.jpg';
-import car4 from '../Images/Cars/C4.jpg';
+import car2 from '../Images/Cars/c2.png';
+import car3 from '../Images/Cars/c3.png';
+import car4 from '../Images/Cars/C4.png';
 import './Hero.css';
 
 const carImages = [car1, car2, car3, car4];
