@@ -85,7 +85,7 @@ const TyreCard = ({ tyre, delay = 0 }) => {
             Details
           </Link>
           <button className="btn btn-primary tyre-cart-btn">
-            <FiShoppingCart size={14} />
+            <FiShoppingCart size={13} />
             Add to Cart
           </button>
         </div>
