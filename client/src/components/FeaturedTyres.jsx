@@ -1,33 +1,38 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FiStar, FiArrowRight, FiShoppingCart } from 'react-icons/fi';
+import { FiStar, FiArrowRight, FiShoppingCart, FiCheck } from 'react-icons/fi';
 import axios from 'axios';
 import './FeaturedTyres.css';
 
+import tyreImg1 from '../Images/Tyres/t1.jpg';
+import tyreImg2 from '../Images/Tyres/t2.jpg';
+import tyreImg3 from '../Images/Tyres/t3.jpg';
+import tyreImg4 from '../Images/Tyres/t4.jpg';
+
 const mockTyres = [
   {
-    _id: '1', brand: 'Michelin', model: 'Primacy 5 Energy', size: '265/65R17',
+    _id: '1', brand: 'Bridgestone', model: 'Turanza T005', size: '205/55R16',
+    price: 142, originalPrice: 165, category: 'Sedan', rating: 4.6, reviews: 312,
+    isFeatured: true, badge: 'Eco Friendly',
+    image: tyreImg1,
+  },
+  {
+    _id: '2', brand: 'Michelin', model: 'Primacy 5 Energy', size: '265/65R17',
     price: 189, originalPrice: 220, category: 'SUV', rating: 4.8, reviews: 234,
     isFeatured: true, badge: 'Best Seller',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
+    image: tyreImg2,
   },
   {
-    _id: '2', brand: 'Michelin', model: 'Pilot Sport 5 Energy', size: '235/45R18',
-    price: 245, originalPrice: 290, category: 'Sports', rating: 4.9, reviews: 189,
-    isFeatured: true, badge: 'New',
-    image: 'https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=400&q=80',
+    _id: '3', brand: 'Continental', model: 'PremiumContact 7', size: '225/50R17',
+    price: 198, originalPrice: 230, category: 'Sedan', rating: 4.7, reviews: 267,
+    isFeatured: true, badge: 'Top Rated',
+    image: tyreImg3,
   },
   {
-    _id: '3', brand: 'BFGoodrich', model: 'All-Terrain T/A KO2', size: '265/70R17',
-    price: 310, originalPrice: 360, category: '4WD', rating: 4.7, reviews: 456,
+    _id: '4', brand: 'BFGoodrich', model: 'All-Terrain T/A KO2', size: '265/70R17',
+    price: 310, originalPrice: 360, category: '4WD', rating: 4.9, reviews: 456,
     isFeatured: true, badge: '$150 Cashback',
-    image: 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=400&q=80',
-  },
-  {
-    _id: '4', brand: 'Bridgestone', model: 'Turanza T005', size: '205/55R16',
-    price: 142, originalPrice: 165, category: 'Sedan', rating: 4.6, reviews: 312,
-    isFeatured: true,
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
+    image: tyreImg4,
   },
 ];
 
@@ -40,9 +45,29 @@ const StarRating = ({ rating }) => (
 );
 
 const TyreCard = ({ tyre, delay = 0 }) => {
+  const [added, setAdded] = useState(false);
   const discount = tyre.originalPrice
     ? Math.round(((tyre.originalPrice - tyre.price) / tyre.originalPrice) * 100)
     : 0;
+
+  const handleAddToCart = () => {
+    try {
+      const saved = localStorage.getItem('tyroola_cart');
+      const cart = saved ? JSON.parse(saved) : [];
+      const existing = cart.find(item => item._id === tyre._id);
+      if (existing) {
+        existing.qty = (existing.qty || 1) + 1;
+      } else {
+        cart.push({ ...tyre, qty: 1 });
+      }
+      localStorage.setItem('tyroola_cart', JSON.stringify(cart));
+      window.dispatchEvent(new Event('tyroola_cart_change'));
+      setAdded(true);
+      setTimeout(() => setAdded(false), 1800);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div className="tyre-card" style={{ animationDelay: `${delay}s` }}>
@@ -57,7 +82,6 @@ const TyreCard = ({ tyre, delay = 0 }) => {
         <div className="tyre-category-tag">{tyre.category}</div>
       </div>
 
-      {/* Neon top-of-body accent */}
       <div className="tyre-card-accent" />
 
       {/* Body */}
@@ -84,9 +108,13 @@ const TyreCard = ({ tyre, delay = 0 }) => {
           <Link to={`/tyres/${tyre._id}`} className="btn btn-outline tyre-detail-btn">
             Details
           </Link>
-          <button className="btn btn-primary tyre-cart-btn">
-            <FiShoppingCart size={13} />
-            Add to Cart
+          <button
+            type="button"
+            className="btn btn-primary tyre-cart-btn"
+            style={{ background: added ? '#10b981' : undefined }}
+            onClick={handleAddToCart}
+          >
+            {added ? <><FiCheck size={13} /> Added!</> : <><FiShoppingCart size={13} /> Add to Cart</>}
           </button>
         </div>
       </div>

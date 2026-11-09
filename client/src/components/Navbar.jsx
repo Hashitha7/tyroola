@@ -806,10 +806,41 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null); // 'tyres' | 'wheels' | 'services' | 'deals' | 'fitting' | 'guide' | 'help' | null
   const [cartModalOpen, setCartModalOpen] = useState(false);
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem('tyroola_cart');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
   const navRef = useRef(null);
   const timeoutRef = useRef(null);
   const { pathname } = useLocation();
   const navigate = useNavigate();
+
+  const cartCount = cartItems.reduce((acc, it) => acc + (it.qty || 1), 0);
+
+  useEffect(() => {
+    const handleCartUpdate = () => {
+      try {
+        const saved = localStorage.getItem('tyroola_cart');
+        setCartItems(saved ? JSON.parse(saved) : []);
+      } catch {
+        setCartItems([]);
+      }
+    };
+    const handleOpenCart = () => setCartModalOpen(true);
+
+    window.addEventListener('storage', handleCartUpdate);
+    window.addEventListener('tyroola_cart_change', handleCartUpdate);
+    window.addEventListener('tyroola_open_cart', handleOpenCart);
+    return () => {
+      window.removeEventListener('storage', handleCartUpdate);
+      window.removeEventListener('tyroola_cart_change', handleCartUpdate);
+      window.removeEventListener('tyroola_open_cart', handleOpenCart);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -1343,7 +1374,7 @@ const Navbar = () => {
                 aria-label="Shopping Cart"
               >
                 <FiShoppingCart size={20} />
-                <span className="cart-badge">0</span>
+                <span className="cart-badge">{cartCount}</span>
               </button>
             </div>
           </div>
@@ -1372,7 +1403,7 @@ const Navbar = () => {
               setCartModalOpen(true);
             }}
           >
-            🛒 Cart Quick View
+            🛒 Cart ({cartCount})
           </button>
           <Link
             to="/tyres"
@@ -1410,6 +1441,30 @@ const Navbar = () => {
 
             {/* Body */}
             <div className="cart-quickview-body">
+              {cartCount > 0 ? (
+                <div style={{ marginBottom: '1rem', padding: '0.75rem', background: '#f5f5f7', borderRadius: '8px', textAlign: 'left' }}>
+                  <div style={{ fontSize: '0.82rem', color: '#111', fontWeight: '700', marginBottom: '0.4rem' }}>
+                    🛒 {cartCount} item{cartCount > 1 ? 's' : ''} in your cart
+                  </div>
+                  <div style={{ maxHeight: '110px', overflowY: 'auto', fontSize: '0.76rem', color: '#555', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                    {cartItems.map((item, idx) => (
+                      <div key={item._id || idx} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #eee', paddingBottom: '0.2rem' }}>
+                        <span>{item.brand} {item.model}</span>
+                        <strong>{item.qty || 1}x ${item.price}</strong>
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{ marginTop: '0.5rem', display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: '800', color: '#000' }}>
+                    <span>Total:</span>
+                    <span style={{ color: '#d97706' }}>${cartItems.reduce((acc, it) => acc + (it.price * (it.qty || 1)), 0).toFixed(2)}</span>
+                  </div>
+                </div>
+              ) : (
+                <div style={{ fontSize: '0.85rem', color: '#777', margin: '0.5rem 0 1rem' }}>
+                  Your shopping cart is currently empty.
+                </div>
+              )}
+
               <button
                 type="button"
                 className="btn-quickview-cart"
