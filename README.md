@@ -295,7 +295,7 @@ npm run build
 <div align="center">
 
 <!-- BOTTOM WAVE -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Built%20with%20❤️%20for%20Australia&fontSize=18&fontColor=FFD700&fontAlignY=65&animation=twinkling" width="100%" />
+<!-- <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Built%20with%20❤️%20for%20Australia&fontSize=18&fontColor=FFD700&fontAlignY=65&animation=twinkling" width="100%" /> -->
 
 <br/>
 

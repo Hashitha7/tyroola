@@ -179,3 +179,4 @@ const RegoSearchModal = ({ isOpen, onClose, onSwitchToTyreSize }) => {
 };
 
 export default RegoSearchModal;
+
