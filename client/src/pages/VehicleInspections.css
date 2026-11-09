@@ -1,0 +1,693 @@
+/* ═════════════════════════════════════════════════════════════════════
+   VEHICLE INSPECTIONS PAGE (Matching Screenshots & 3D Interactive Design)
+   ═════════════════════════════════════════════════════════════════════ */
+
+.vehicle-inspections-page {
+  background: #ffffff;
+  color: #1a202c;
+  min-height: 100vh;
+}
+
+/* ── 1. Hero Section (Matching Screenshot 1) ── */
+.inspections-hero {
+  background: #141722;
+  color: #ffffff;
+  padding: 3.5rem 0 3.2rem;
+  overflow: hidden;
+  position: relative;
+}
+.inspections-hero-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 2.5rem;
+}
+.inspections-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.inspections-hero-title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+.inspections-hero-highlight {
+  color: #f5a623;
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+.inspections-hero-sub {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 490px;
+}
+.btn-get-inspection-quote {
+  align-self: flex-start;
+  background: #f5a623;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 0.85rem 2.2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.3px;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.35);
+}
+.btn-get-inspection-quote:hover {
+  background: #e09419;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 166, 35, 0.5);
+}
+.inspections-hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inspections-hero-img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.55));
+}
+
+/* ── 2. Middle Banner (Matching Screenshots 1 & 2) ── */
+.inspections-care-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4.8rem 0;
+  text-align: center;
+  color: #ffffff;
+}
+.inspections-care-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 16, 24, 0.82);
+  backdrop-filter: blur(2px);
+}
+.inspections-care-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 840px;
+  margin: 0 auto;
+}
+.inspections-care-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+.inspections-care-sub {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin: 0;
+}
+.btn-click-for-quote {
+  background: #f5a623;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 0.85rem 2.6rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 0.75rem;
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.35);
+}
+.btn-click-for-quote:hover {
+  background: #e09419;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 166, 35, 0.5);
+}
+
+/* ── 3. The Tyroola Advantage (Matching Screenshots 2 & 3) ── */
+.advantage-section {
+  background: #ffffff;
+  padding: 4.5rem 0;
+  text-align: center;
+}
+.advantage-header {
+  margin-bottom: 3rem;
+}
+.section-heading-dark {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.4px;
+}
+.section-sub-dark {
+  font-size: 1.05rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.advantage-card-3d {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.advantage-card-3d:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.09);
+  border-color: #f5a623;
+}
+.advantage-icon-box {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+.adv-icon {
+  width: 52px;
+  height: 52px;
+}
+.advantage-card-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 0.75rem;
+}
+.advantage-card-text {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── 4. Comprehensive Vehicle Inspections (Matching Screenshot 4) ── */
+.comprehensive-inspections-section {
+  background: #f8fafc;
+  padding: 4.8rem 0 5.2rem;
+  border-top: 1px solid #edf2f7;
+  border-bottom: 1px solid #edf2f7;
+}
+.comprehensive-header {
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
+.inspections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* 3D Elevated White Inspection Card */
+.inspection-card-3d {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 2.4rem 1.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.inspection-card-3d:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.11);
+  border-color: #f5a623;
+}
+
+/* Dashed Icon Circle Frame */
+.inspection-dashed-circle {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 2px dashed #93c5fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+.inspection-card-3d:hover .inspection-dashed-circle {
+  border-color: #f5a623;
+  border-style: solid;
+  background: #fffbeb;
+  box-shadow: 0 0 20px rgba(245, 166, 35, 0.3);
+  transform: scale(1.08) rotate(5deg);
+}
+
+.inspection-card-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.inspection-card-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 0.75rem;
+  line-height: 1.35;
+  min-height: 2.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inspection-card-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 1.2rem;
+  min-height: 3.6rem;
+}
+
+.inspection-card-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  flex-grow: 1;
+}
+.inspection-card-bullets li {
+  font-size: 0.84rem;
+  color: #334155;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.45;
+}
+.bullet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f5a623;
+  margin-top: 0.45rem;
+  flex-shrink: 0;
+}
+
+.inspection-card-footer {
+  width: 100%;
+  padding-top: 1.1rem;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.est-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f172a;
+  background: #f1f5f9;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+}
+.btn-card-quote {
+  background: transparent;
+  color: #f5a623;
+  border: 1px solid #f5a623;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+.btn-card-quote:hover {
+  background: #f5a623;
+  color: #000000;
+}
+
+/* ── 5. How It Works (Matching Screenshot 5) ── */
+.how-it-works-section {
+  background: #ffffff;
+  padding: 4.8rem 0;
+  text-align: center;
+}
+.how-it-works-header {
+  margin-bottom: 3.2rem;
+}
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.how-card-3d {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.how-card-3d:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.09);
+  border-color: #f5a623;
+}
+.how-icon-box {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+.how-icon {
+  width: 52px;
+  height: 52px;
+}
+.how-step-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 0.75rem;
+}
+.how-step-desc {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── 6. Payment Strip ── */
+.payment-strip {
+  background: #0f141f;
+  color: #94a3b8;
+  padding: 1.4rem 0;
+  border-top: 1px solid #1e293b;
+}
+.payment-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.payment-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+.payment-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.pay-badge {
+  background: #1e293b;
+  color: #f1f5f9;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid #334155;
+}
+
+/* ── 7. Interactive 3D Quote & Booking Modal ── */
+.modal-backdrop-blur {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 24, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeInModal 0.25s ease-out;
+}
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.quote-modal-3d {
+  background: #141a26;
+  color: #ffffff;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 620px;
+  padding: 2.2rem 2.4rem;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(245, 166, 35, 0.15);
+  animation: slideUp3D 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+@keyframes slideUp3D {
+  from {
+    transform: translateY(30px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.modal-close-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.modal-header-3d {
+  margin-bottom: 1.6rem;
+  text-align: left;
+}
+.modal-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #f5a623;
+  background: rgba(245, 166, 35, 0.12);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+.modal-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.35rem;
+}
+.modal-subtitle {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.quote-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+}
+.form-group-full {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.quote-form-grid label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  letter-spacing: 0.2px;
+}
+.form-select,
+.form-input,
+.form-textarea {
+  background: #1e2638;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.92rem;
+  padding: 0.7rem 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+.form-select:focus,
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #f5a623;
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+}
+.form-textarea {
+  resize: vertical;
+}
+
+.form-submit-row {
+  grid-column: 1 / -1;
+  margin-top: 0.6rem;
+}
+.btn-modal-submit {
+  width: 100%;
+  background: #f5a623;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.35);
+}
+.btn-modal-submit:hover {
+  background: #e09419;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(245, 166, 35, 0.5);
+}
+
+/* Success State in Modal */
+.quote-success-state {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.success-icon-badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin: 0 auto 1.4rem;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+  animation: popSuccess 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes popSuccess {
+  from { transform: scale(0.4); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.quote-success-state h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.8rem;
+}
+.quote-success-state p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0 0 1.2rem;
+}
+.success-reference {
+  background: #1e2638;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  border: 1px dashed #f5a623;
+  color: #f5a623;
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.success-sub {
+  color: #94a3b8 !important;
+  font-size: 0.85rem !important;
+}
+
+/* ── 8. Responsive Breakpoints ── */
+@media (max-width: 1024px) {
+  .inspections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .inspections-hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .inspections-hero-title {
+    font-size: 2.2rem;
+  }
+  .btn-get-inspection-quote {
+    align-self: center;
+  }
+  .advantage-grid,
+  .inspections-grid,
+  .how-grid {
+    grid-template-columns: 1fr;
+  }
+  .quote-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .quote-modal-3d {
+    padding: 1.8rem 1.4rem;
+  }
+}

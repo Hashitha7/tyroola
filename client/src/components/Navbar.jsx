@@ -297,7 +297,7 @@ const servicesCategories = [
     id: 'inspections',
     label: 'Inspections',
     desc: 'Pre-purchase, Insurance coverage, Emission, Road Trip inspections & more',
-    path: '/car-services',
+    path: '/inspections',
     color: '#00e676',
     icon: (
       <svg viewBox="0 0 64 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">

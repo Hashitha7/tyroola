@@ -1,0 +1,274 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="100%" height="100%">
+  <defs>
+    <!-- Car body gradient -->
+    <linearGradient id="insp-car-body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4b5563"/>
+      <stop offset="45%" stop-color="#374151"/>
+      <stop offset="85%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+
+    <!-- Glass gradient -->
+    <linearGradient id="insp-glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Metal Lift Gradient -->
+    <linearGradient id="lift-metal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4b5563"/>
+      <stop offset="50%" stop-color="#6b7280"/>
+      <stop offset="100%" stop-color="#374151"/>
+    </linearGradient>
+
+    <!-- Hydraulic Cylinder -->
+    <linearGradient id="hydraulic-sheen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d1d5db"/>
+      <stop offset="50%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+
+    <!-- Filter for soft drop shadow -->
+    <filter id="insp-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Glow for checkmark -->
+    <filter id="check-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#f59e0b" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- ── Base Floor / Ramp Surface ── -->
+  <path d="M0,450 L760,420 L760,500 L0,500 Z" fill="#181b24"/>
+  <ellipse cx="500" cy="445" rx="230" ry="25" fill="#0b0d12" opacity="0.8"/>
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       1. HYDRAULIC SCISSOR HOIST LIFT (With Car on top)
+       ════════════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(480, 180)">
+    <!-- Scissor Mechanism Underneath Platform -->
+    <!-- Base Floor Plate -->
+    <rect x="-165" y="190" width="330" height="16" rx="4" fill="#374151" stroke="#1f2937" stroke-width="2"/>
+    <rect x="-170" y="196" width="30" height="12" rx="2" fill="#f59e0b"/>
+    <rect x="140" y="196" width="30" height="12" rx="2" fill="#f59e0b"/>
+
+    <!-- Left & Right Scissor Crossing Arms (Heavy Duty Workshop Lift) -->
+    <!-- Arm 1: Top-Left to Bottom-Right -->
+    <path d="M-130,55 L130,190 L115,198 L-145,63 Z" fill="url(#lift-metal)" stroke="#1f2937" stroke-width="1.5"/>
+    <!-- Arm 2: Bottom-Left to Top-Right -->
+    <path d="M-145,190 L115,55 L130,63 L-130,198 Z" fill="url(#lift-metal)" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Center Pivot Pin with bolt -->
+    <circle cx="-7.5" cy="126" r="10" fill="#1f2937" stroke="#9ca3af" stroke-width="2"/>
+    <circle cx="-7.5" cy="126" r="4" fill="#d1d5db"/>
+
+    <!-- Dual Hydraulic Rams inside scissor -->
+    <rect x="-45" y="110" width="16" height="60" rx="3" transform="rotate(-35 -45 110)" fill="url(#hydraulic-sheen)" stroke="#4b5563"/>
+    <rect x="-35" y="118" width="8" height="40" rx="2" transform="rotate(-35 -35 118)" fill="#f3f4f6"/>
+
+    <!-- Platform Support Columns & Safety Pillars -->
+    <rect x="-155" y="45" width="22" height="150" rx="3" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+    <rect x="133" y="45" width="22" height="150" rx="3" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+    <!-- Safety Yellow Stripes on Pillars -->
+    <rect x="-155" y="55" width="22" height="8" fill="#f59e0b"/>
+    <rect x="-155" y="175" width="22" height="8" fill="#f59e0b"/>
+    <rect x="133" y="55" width="22" height="8" fill="#f59e0b"/>
+    <rect x="133" y="175" width="22" height="8" fill="#f59e0b"/>
+
+    <!-- Top Platform Bed on which wheels rest -->
+    <rect x="-175" y="45" width="350" height="16" rx="4" fill="#374151" stroke="#4b5563" stroke-width="2"/>
+    <!-- Wheel Stop Chocks (Yellow) -->
+    <path d="M-175,45 L-160,32 L-145,45 Z" fill="#f59e0b"/>
+    <path d="M145,45 L160,32 L175,45 Z" fill="#f59e0b"/>
+
+    <!-- ── Modern Hatchback / SUV Car Side Profile (Elevated) ── -->
+    <g transform="translate(0, 0)">
+      <!-- Front & Rear Tyres (Resting on Platform y=45) -->
+      <!-- Front Wheel (Left) -->
+      <circle cx="-110" cy="18" r="28" fill="#111827" stroke="#1f2937" stroke-width="3"/>
+      <circle cx="-110" cy="18" r="17" fill="#374151" stroke="#9ca3af" stroke-width="2"/>
+      <circle cx="-110" cy="18" r="6" fill="#111827"/>
+      <!-- Silver Spokes -->
+      <line x1="-110" y1="5" x2="-110" y2="31" stroke="#e5e7eb" stroke-width="2"/>
+      <line x1="-123" y1="18" x2="-97" y2="18" stroke="#e5e7eb" stroke-width="2"/>
+
+      <!-- Rear Wheel (Right) -->
+      <circle cx="105" cy="18" r="28" fill="#111827" stroke="#1f2937" stroke-width="3"/>
+      <circle cx="105" cy="18" r="17" fill="#374151" stroke="#9ca3af" stroke-width="2"/>
+      <circle cx="105" cy="18" r="6" fill="#111827"/>
+      <line x1="105" y1="5" x2="105" y2="31" stroke="#e5e7eb" stroke-width="2"/>
+      <line x1="92" y1="18" x2="118" y2="18" stroke="#e5e7eb" stroke-width="2"/>
+
+      <!-- Wheel Arches (Dark inner guards) -->
+      <path d="M-146,18 C-146,-12 -74,-12 -74,18 Z" fill="#0f172a"/>
+      <path d="M69,18 C69,-12 141,-12 141,18 Z" fill="#0f172a"/>
+
+      <!-- Main Car Body Shell -->
+      <!-- Low Sill Line -->
+      <path d="M-175,12 L-150,12 C-146,-8 -74,-8 -70,12 L65,12 C69,-8 141,-8 145,12 L172,8 C176,8 178,-5 174,-20 L162,-55 C158,-75 140,-88 115,-92 L10,-95 C-25,-95 -75,-65 -115,-38 L-165,-30 C-180,-28 -185,-5 -182,5 Z" 
+            fill="url(#insp-car-body)" stroke="#4b5563" stroke-width="1.8"/>
+
+      <!-- Roof & Pillars -->
+      <path d="M-65,-38 L5,-88 L95,-85 L140,-45 Z" fill="#1f2937"/>
+      
+      <!-- Windows (Front Windscreen, Side Windows, Rear Hatch) -->
+      <!-- Front Windscreen -->
+      <path d="M-60,-40 L2,-83 L-18,-83 L-75,-40 Z" fill="url(#insp-glass)"/>
+      <!-- Front Side Window -->
+      <path d="M-12,-82 L42,-82 L42,-44 L-52,-44 Z" fill="url(#insp-glass)"/>
+      <!-- Rear Side Window & Quarter Glass -->
+      <path d="M48,-82 L90,-80 L128,-44 L48,-44 Z" fill="url(#insp-glass)"/>
+      <!-- Window Pillars (B-Pillar & C-Pillar) -->
+      <rect x="42" y="-83" width="6" height="39" fill="#111827"/>
+      <rect x="-15" y="-83" width="4" height="39" fill="#111827"/>
+
+      <!-- Side Body Crease Lines -->
+      <path d="M-155,-10 L-70,-10 M65,-10 L160,-15" stroke="#6b7280" stroke-width="1.8"/>
+      <path d="M-65,-22 L60,-22" stroke="#4b5563" stroke-width="1.5"/>
+
+      <!-- Door Handles -->
+      <rect x="-2" y="-18" width="16" height="4" rx="2" fill="#111827" stroke="#6b7280"/>
+      <rect x="58" y="-18" width="16" height="4" rx="2" fill="#111827" stroke="#6b7280"/>
+
+      <!-- Headlight (Front Left) -->
+      <path d="M-180,-15 L-162,-25 L-158,-12 Z" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1"/>
+      <path d="M-175,-16 L-162,-22" stroke="#ffd700" stroke-width="2"/>
+
+      <!-- Taillight (Rear Right) -->
+      <path d="M165,-28 L175,-25 L170,-10 L158,-12 Z" fill="#ef4444" stroke="#b91c1c" stroke-width="1"/>
+      <path d="M163,-22 L172,-18" stroke="#ffedd5" stroke-width="1.5"/>
+
+      <!-- Fuel Cap Door -->
+      <ellipse cx="120" cy="-25" rx="7" ry="9" fill="none" stroke="#4b5563" stroke-width="1.2"/>
+    </g>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         INSPECTOR 1 (Standing Under Platform on Left, Holding Checklist Tablet)
+         ════════════════════════════════════════════════════════════════════ -->
+    <g transform="translate(-105, 120)">
+      <!-- Head with Beard & Dark Cap -->
+      <circle cx="0" cy="-22" r="14" fill="#fed7aa"/>
+      <!-- Dark Cap with Peak pointing right -->
+      <path d="M-12,-24 C-12,-35 12,-35 12,-24 L18,-22 L-12,-22 Z" fill="#1f2937"/>
+      <!-- Beard & Facial Features looking up at car -->
+      <path d="M4,-22 L10,-18 L8,-12 L-4,-12 Z" fill="#523924"/>
+      <circle cx="6" cy="-22" r="1.8" fill="#111"/>
+
+      <!-- Neck -->
+      <rect x="-3" y="-10" width="8" height="8" fill="#fed7aa"/>
+
+      <!-- Body Overalls (Dark Navy Grey + Yellow High-Vis Straps) -->
+      <path d="M-12,-2 L14,-2 L18,70 L-14,70 Z" fill="#1f2937"/>
+      <!-- Yellow High-Vis Over-Shoulder Suspenders / Straps -->
+      <line x1="-7" y1="-2" x2="-4" y2="35" stroke="#f59e0b" stroke-width="4.5"/>
+      <line x1="9" y1="-2" x2="6" y2="35" stroke="#f59e0b" stroke-width="4.5"/>
+      <line x1="-12" y1="35" x2="16" y2="35" stroke="#f59e0b" stroke-width="4"/>
+
+      <!-- Left Arm & Hand Holding Digital Inspection Tablet -->
+      <path d="M-10,4 L-24,30 L0,32" stroke="#fed7aa" stroke-width="7" stroke-linecap="round"/>
+      <!-- Right Arm Holding Stylus/Checklist Pen -->
+      <path d="M12,4 L24,24 L10,30" stroke="#fed7aa" stroke-width="7" stroke-linecap="round"/>
+
+      <!-- Digital Tablet (Looking up at vehicle underside checklist) -->
+      <g transform="translate(-15, 20) rotate(-15)">
+        <rect x="0" y="0" width="34" height="24" rx="3" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
+        <rect x="3" y="3" width="28" height="18" rx="1.5" fill="#38bdf8" opacity="0.9"/>
+        <!-- Tablet Checklist lines & green tick -->
+        <line x1="6" y1="8" x2="20" y2="8" stroke="#0f172a" stroke-width="1.5"/>
+        <line x1="6" y1="13" x2="18" y2="13" stroke="#0f172a" stroke-width="1.5"/>
+        <path d="M22,12 L24,15 L28,9" stroke="#16a34a" stroke-width="2" fill="none"/>
+      </g>
+
+      <!-- Work Pants & Sturdy Boots -->
+      <line x1="-7" y1="70" x2="-8" y2="125" stroke="#1f2937" stroke-width="9" stroke-linecap="round"/>
+      <line x1="9" y1="70" x2="10" y2="125" stroke="#1f2937" stroke-width="9" stroke-linecap="round"/>
+      <rect x="-16" y="125" width="18" height="9" rx="3" fill="#111827"/>
+      <rect x="4" y="125" width="18" height="9" rx="3" fill="#111827"/>
+    </g>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         INSPECTOR 2 (Standing on Right, Hands Inspecting the Rear Wheel)
+         ════════════════════════════════════════════════════════════════════ -->
+    <g transform="translate(138, 50)">
+      <!-- Head with Yellow Safety Cap/Hair facing wheel (left) -->
+      <circle cx="0" cy="-14" r="13" fill="#fed7aa"/>
+      <path d="M-10,-16 C-10,-26 12,-26 12,-16 L-2,-14 Z" fill="#1f2937"/>
+      <!-- Cap turned backwards / work cap -->
+      <rect x="8" y="-18" width="8" height="4" rx="2" fill="#f59e0b"/>
+      <circle cx="-5" cy="-14" r="1.5" fill="#111"/>
+
+      <!-- Torso in dark shirt with yellow reflective shoulder vest -->
+      <path d="M-12,0 L12,0 L15,75 L-14,75 Z" fill="#1f2937"/>
+      <!-- Yellow safety straps -->
+      <line x1="-6" y1="0" x2="-4" y2="35" stroke="#f59e0b" stroke-width="4"/>
+      <line x1="7" y1="0" x2="5" y2="35" stroke="#f59e0b" stroke-width="4"/>
+
+      <!-- Arms Reaching Out to the Rear Tyre -->
+      <path d="M-8,12 L-32,0 L-42,-10" stroke="#fed7aa" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-6,18 L-28,14 L-36,5" stroke="#fed7aa" stroke-width="7" stroke-linecap="round"/>
+
+      <!-- Legs in Dark Overalls & Work Boots -->
+      <line x1="-6" y1="75" x2="-8" y2="195" stroke="#1f2937" stroke-width="8" stroke-linecap="round"/>
+      <line x1="8" y1="75" x2="10" y2="195" stroke="#1f2937" stroke-width="8" stroke-linecap="round"/>
+      <rect x="-16" y="195" width="18" height="9" rx="3" fill="#111827"/>
+      <rect x="4" y="195" width="18" height="9" rx="3" fill="#111827"/>
+    </g>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       2. CENTRAL GLOWING YELLOW RING WITH SMARTPHONE & CHECKMARK (SO EASY)
+       ════════════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(230, 240)">
+    <!-- Outer Golden Halo -->
+    <circle cx="0" cy="0" r="148" fill="none" stroke="#f5a623" stroke-width="1.5" opacity="0.4" stroke-dasharray="10 8"/>
+    <!-- Yellow Solid Glowing Ring -->
+    <circle cx="0" cy="0" r="138" fill="none" stroke="#f5a623" stroke-width="7" filter="url(#insp-shadow)"/>
+    <circle cx="0" cy="0" r="134" fill="#0c0e14" opacity="0.94"/>
+    <circle cx="0" cy="0" r="130" fill="#f5a623" opacity="0.08"/>
+
+    <!-- Left Hand Holding Smartphone with Yellow Sleeve -->
+    <!-- Yellow Shirt Sleeve Cuff -->
+    <path d="M-105,120 L-65,85 L-48,105 L-88,140 Z" fill="#f5a623"/>
+    <path d="M-68,82 L-46,102" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+    <!-- Hand Palm & Thumb Wrapping Around Edge -->
+    <path d="M-58,80 C-45,60 -25,45 -35,20 C-40,8 -55,10 -60,25 C-65,40 -60,65 -58,80 Z" fill="#fed7aa"/>
+    <!-- Hand Thumb Grasping Phone Edge -->
+    <path d="M-36,25 C-28,25 -24,40 -34,48 Z" fill="#fdba74"/>
+
+    <!-- Right Hand Forefinger Tapping the Greenlight Badge -->
+    <g transform="translate(42, 60)">
+      <!-- Pointing Forefinger -->
+      <path d="M35,60 L-10,5 C-18,-4 -30,6 -22,15 L15,68 Z" fill="#fed7aa"/>
+      <ellipse cx="-20" cy="8" rx="6" ry="5" fill="#fca5a5" opacity="0.6"/>
+      <!-- Other Clenched Fingers -->
+      <path d="M12,65 C20,50 35,55 35,70 C35,85 20,85 12,65 Z" fill="#fdba74"/>
+      <path d="M22,75 C30,65 42,70 40,85 C38,95 25,95 22,75 Z" fill="#fdba74"/>
+    </g>
+
+    <!-- Sleek Smartphone (Dark Body with rounded corners) -->
+    <rect x="-50" y="-105" width="100" height="190" rx="18" fill="#1e2430" stroke="#334155" stroke-width="4"/>
+    <!-- Inner Phone Screen -->
+    <rect x="-44" y="-88" width="88" height="156" rx="10" fill="#0f172a"/>
+
+    <!-- Phone Speaker Notch & Camera Pin -->
+    <rect x="-14" y="-98" width="28" height="4" rx="2" fill="#334155"/>
+    <circle cx="20" cy="-96" r="2.5" fill="#334155"/>
+
+    <!-- Greenlight Inspection Approved Badge (Golden Yellow Ring with Bold Checkmark) -->
+    <g transform="translate(0, -10)">
+      <!-- Outer Pulsing Circle -->
+      <circle cx="0" cy="0" r="42" fill="none" stroke="#f5a623" stroke-width="2.5" opacity="0.5"/>
+      <!-- Inner Solid Ring -->
+      <circle cx="0" cy="0" r="36" fill="#141923" stroke="#f5a623" stroke-width="5" filter="url(#check-glow)"/>
+      <circle cx="0" cy="0" r="30" fill="#f5a623" opacity="0.15"/>
+
+      <!-- Bold Golden Checkmark Tick -->
+      <path d="M-14,0 L-4,10 L14,-8" fill="none" stroke="#f5a623" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- UI Pill / Text Indicator below on screen -->
+    <rect x="-28" y="42" width="56" height="8" rx="4" fill="#334155"/>
+    <rect x="-16" y="54" width="32" height="4" rx="2" fill="#f5a623" opacity="0.7"/>
+  </g>
+</svg>
