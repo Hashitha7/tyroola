@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiUsers, FiTrendingUp, FiCheckCircle } from 'react-icons/fi';
+import p1 from '../Images/Partner/p1.jpg';
+import p2 from '../Images/Partner/p2.jpg';
+import p3 from '../Images/Partner/p3.jpg';
 import './PartnerSection.css';
 
 const partnerCards = [
@@ -7,7 +10,7 @@ const partnerCards = [
     id: 'customers',
     title: 'Gain New Customers',
     desc: 'We make it easy for customers to find you!',
-    img: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&q=80',
+    img: p1,
     icon: <FiUsers />,
     badge: 'More Bookings',
     color: '#00d4ff',
@@ -17,7 +20,7 @@ const partnerCards = [
     id: 'grow',
     title: 'Grow Your Business',
     desc: 'Enjoy new business opportunities as a Tyroola Approved Partner Mechanic or Tyre Fitter!',
-    img: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80',
+    img: p2,
     icon: <FiTrendingUp />,
     badge: 'Extra Revenue',
     color: '#ffd700',
@@ -27,7 +30,7 @@ const partnerCards = [
     id: 'free',
     title: 'Sign Up Is Free!',
     desc: 'All licensed fitting stations, repair workshops & service centres with qualified mechanics are welcome to join!',
-    img: 'https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=600&q=80',
+    img: p3,
     icon: <FiCheckCircle />,
     badge: '100% Free',
     color: '#00e676',
@@ -99,4 +102,3 @@ const PartnerSection = () => {
 };
 
 export default PartnerSection;
-
