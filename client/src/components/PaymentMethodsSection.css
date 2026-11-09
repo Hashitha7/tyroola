@@ -1,8 +1,10 @@
 .payment-section {
   position: relative;
-  background: #0d0d14;
+  background: #050508;
   padding: 4rem 0 6rem;
   overflow: hidden;
+  border: none;
+  margin: 0;
 }
 
 .payment-bg-lights {

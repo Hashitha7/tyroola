@@ -1,8 +1,10 @@
 .video-section {
   position: relative;
-  background: linear-gradient(180deg, var(--black) 0%, #101018 100%);
+  background: linear-gradient(180deg, var(--black) 0%, #050508 100%);
   padding: 5rem 0 6rem;
   overflow: hidden;
+  border: none;
+  margin: 0;
 }
 
 .video-section-bg {
