@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { FiBookOpen, FiCheckCircle, FiInfo } from 'react-icons/fi';
-import SearchBarStrip from './SearchBarStrip';
 import './TyreTipsSection.css';
 
 const tipsData = [
@@ -45,9 +44,6 @@ const TyreTipsSection = () => {
   return (
     <section className="section tyre-tips-section">
       <div className="tyre-tips-bg" />
-
-      {/* Floating Yellow Search Bar Strip as in screenshot */}
-      <SearchBarStrip />
 
       <div className="container">
         <div className="tyre-tips-header">

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { FiChevronDown, FiHelpCircle, FiCheck } from 'react-icons/fi';
-import SearchBarStrip from './SearchBarStrip';
 import './FaqSection.css';
 
 const faqs = [
@@ -60,9 +59,6 @@ const FaqSection = () => {
   return (
     <section id="faq-section" className="section faq-section">
       <div className="faq-bg-ambient" />
-
-      {/* Floating Yellow Search Bar Strip as in screenshot */}
-      <SearchBarStrip />
 
       <div className="container faq-container">
         <div className="faq-header">

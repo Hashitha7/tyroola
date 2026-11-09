@@ -1,4 +1,3 @@
-import SearchBarStrip from './SearchBarStrip';
 import './PaymentMethodsSection.css';
 
 const paymentOptions = [
@@ -48,9 +47,6 @@ const PaymentMethodsSection = () => {
   return (
     <section className="section payment-section">
       <div className="payment-bg-lights" />
-
-      {/* Floating Yellow Search Bar Strip on top as in screenshot */}
-      <SearchBarStrip />
 
       <div className="container">
         <div className="payment-header">

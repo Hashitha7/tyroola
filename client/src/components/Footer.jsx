@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { FiLinkedin, FiFacebook, FiInstagram, FiLock, FiPhone, FiMail, FiClock } from 'react-icons/fi';
-import SearchBarStrip from './SearchBarStrip';
 import './Footer.css';
 
 // 6 Top Categories Directory
@@ -121,11 +120,6 @@ const Footer = () => {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Part 3: Signature Yellow Search Strip Bar */}
-      <div className="footer-search-strip-wrap">
-        <SearchBarStrip />
       </div>
 
       <div className="footer-divider-subtle" />

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiUsers, FiTrendingUp, FiCheckCircle } from 'react-icons/fi';
-import SearchBarStrip from './SearchBarStrip';
 import './PartnerSection.css';
 
 const partnerCards = [
@@ -40,9 +39,6 @@ const PartnerSection = () => {
   return (
     <section className="section partner-section">
       <div className="partner-bg-glow" />
-
-      {/* Signature Yellow Search Bar Strip on top as in screenshot */}
-      <SearchBarStrip />
 
       <div className="container">
         <div className="partner-header">

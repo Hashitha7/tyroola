@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
-import SearchBarStrip from './SearchBarStrip';
 import './MechanicServicesSection.css';
 
 const services = [
@@ -40,9 +39,6 @@ const MechanicServicesSection = () => {
   return (
     <section className="section mechanic-section">
       <div className="mechanic-bg-lights" />
-
-      {/* Floating Yellow Search Bar Strip as in screenshot */}
-      <SearchBarStrip />
 
       <div className="container">
         <div className="mechanic-header">
