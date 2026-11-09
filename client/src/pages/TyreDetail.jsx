@@ -233,11 +233,22 @@ const TyreDetail = () => {
 
             {/* Qty selector */}
             <div className="detail-qty">
-              <label>Quantity</label>
-              <div className="qty-controls">
-                {[1, 2, 4].map(n => (
-                  <button key={n} className={`qty-btn ${qty === n ? 'active' : ''}`} onClick={() => setQty(n)}>
-                    {n} tyre{n > 1 ? 's' : ''}
+              <span className="qty-heading-label">Quantity</span>
+              <div className="qty-pills-row">
+                {[
+                  { count: 1, label: '1 Tyre' },
+                  { count: 2, label: '2 Tyres' },
+                  { count: 4, label: '4 Tyres', tag: 'Best Value' },
+                ].map(item => (
+                  <button
+                    key={item.count}
+                    type="button"
+                    className={`qty-pill-card ${qty === item.count ? 'active' : ''}`}
+                    onClick={() => setQty(item.count)}
+                  >
+                    <span className="qty-num-circle">{item.count}</span>
+                    <span className="qty-label-name">{item.label}</span>
+                    {item.tag && <span className="qty-best-tag">{item.tag}</span>}
                   </button>
                 ))}
               </div>
@@ -247,16 +258,22 @@ const TyreDetail = () => {
             <div className="detail-actions">
               <button
                 type="button"
-                className="btn btn-primary"
-                style={{ flex: 1, background: added ? '#10b981' : undefined }}
+                className={`btn-detail-add-cart ${added ? 'added' : ''}`}
                 onClick={handleAddToCart}
               >
-                {added ? <><FiCheck /> Added {qty} to Cart!</> : <><FiShoppingCart /> Add to Cart</>}
+                {added ? (
+                  <>
+                    <FiCheck size={18} /> Added {qty} to Cart!
+                  </>
+                ) : (
+                  <>
+                    <FiShoppingCart size={18} /> Add to Cart
+                  </>
+                )}
               </button>
               <button
                 type="button"
-                className="btn btn-outline"
-                style={{ flex: 1 }}
+                className="btn-detail-buy-now"
                 onClick={handleBuyNow}
               >
                 Buy Now
