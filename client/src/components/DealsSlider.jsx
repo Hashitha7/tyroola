@@ -20,7 +20,7 @@ const DealsSlider = () => {
         const { data } = await axios.get('/api/deals');
         const formatted = (data.data || []).map((d, idx) => ({
           ...d,
-          image: dealImages[idx % dealImages.length] || d.image
+          image: dealImages[idx % dealImages.length]
         }));
         setDeals(formatted);
       } catch {
@@ -96,9 +96,9 @@ const DealsSlider = () => {
 
         <div className="deals-grid">
           {getDealsBatch().map((deal, i) => {
-            const cardImg = deal.image || dealImages[i % dealImages.length];
+            const cardImg = dealImages[(current + i) % dealImages.length];
             return (
-              <div key={deal._id} className="deal-card card-3d" style={{ animationDelay: `${i * 0.1}s` }}>
+              <div key={deal._id || i} className="deal-card card-3d" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className="deal-card-top">
                   <img src={cardImg} alt={deal.title} className="deal-top-img" />
                   <div className="deal-top-overlay" />

@@ -57,9 +57,7 @@ const Deals = () => {
         ) : (
           <div className="deals-page-grid">
             {deals.map((deal, i) => {
-              const cardImg = deal.image && (deal.image.startsWith('data:') || deal.image.startsWith('blob:') || deal.image.startsWith('/') || deal.image.includes('Hotdeals')) 
-                ? deal.image 
-                : dealImages[i % dealImages.length];
+              const cardImg = dealImages[i % dealImages.length];
               return (
                 <div key={deal._id} className="deal-page-card card-3d" style={{ animationDelay: `${i * 0.08}s` }}>
                   <div className="deal-page-top">
