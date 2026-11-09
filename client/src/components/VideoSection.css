@@ -68,7 +68,12 @@
 .video-overlay {
   position: absolute;
   inset: 0;
+  opacity: 0.35;
   transition: opacity 0.3s ease;
+}
+
+.video-card:hover .video-overlay {
+  opacity: 0.2;
 }
 
 .video-iframe {

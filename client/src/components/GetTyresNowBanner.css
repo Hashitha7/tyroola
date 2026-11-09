@@ -1,48 +1,41 @@
 .get-tyres-banner {
   position: relative;
-  background: #08080c;
-  min-height: 480px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  border-top: none;
-  border-bottom: none;
-}
-
-.warehouse-backdrop {
-  position: absolute;
-  inset: 0;
+  background-color: #08080c;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(0.68) contrast(1.15);
-  transform: scale(1.02);
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 0;
+  overflow: hidden;
+  border: none;
+  margin: 0;
 }
 
 .warehouse-overlay {
   position: absolute;
   inset: 0;
   background: 
-    linear-gradient(90deg, rgba(8, 8, 12, 0.94) 0%, rgba(8, 8, 12, 0.72) 50%, rgba(8, 8, 12, 0.45) 100%),
-    linear-gradient(180deg, #08080c 0%, transparent 20%, transparent 80%, #08080c 100%);
+    linear-gradient(180deg, #08080c 0%, rgba(8, 8, 12, 0.1) 25%, rgba(8, 8, 12, 0.1) 75%, #08080c 100%),
+    radial-gradient(ellipse at 50% 50%, transparent 30%, #08080c 95%);
   pointer-events: none;
 }
 
 .get-tyres-container {
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  padding: 4rem 2rem;
-  width: 100%;
 }
 
 .get-tyres-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 5;
 }
 
 .get-tyres-title {
@@ -52,56 +45,49 @@
   color: #ffffff;
   margin-bottom: 1.2rem;
   line-height: 1.15;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 215, 0, 0.25);
 }
 
 .get-tyres-subtitle {
-  font-size: 1.2rem;
-  color: #cfcfe0;
+  font-size: 1.25rem;
+  color: #d1d5db;
   line-height: 1.6;
-  max-width: 600px;
   margin-bottom: 2.25rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
 }
 
 .get-tyres-btn {
-  font-size: 1.15rem;
-  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  padding: 1rem 2.8rem;
   border-radius: 12px;
   background: linear-gradient(135deg, #FFC700 0%, #FF9900 100%);
   color: #0a0a0f;
   font-weight: 800;
-  box-shadow: 0 10px 30px rgba(255, 199, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(255, 199, 0, 0.4), 0 0 40px rgba(255, 199, 0, 0.2);
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .get-tyres-btn:hover {
   transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 15px 45px rgba(255, 199, 0, 0.6);
+  box-shadow: 0 15px 45px rgba(255, 199, 0, 0.6), 0 0 60px rgba(255, 199, 0, 0.35);
 }
 
-.get-tyres-canvas {
-  height: 380px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 900px) {
-  .get-tyres-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
+@media (max-width: 768px) {
+  .get-tyres-banner {
+    min-height: 400px;
+    padding: 4rem 1.5rem;
   }
-  .get-tyres-content {
-    align-items: center;
+  .get-tyres-subtitle {
+    font-size: 1.05rem;
   }
-  .get-tyres-canvas {
-    height: 280px;
+  .get-tyres-btn {
+    font-size: 0.95rem;
+    padding: 0.85rem 2rem;
   }
 }
