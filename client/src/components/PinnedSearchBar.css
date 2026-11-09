@@ -1,0 +1,166 @@
+/* ═════════════════════════════════════════════════════════════════════
+   PINNED SEARCH BAR (Sticky Centered at Top on Scroll - Screenshots 2 & 4)
+   ═════════════════════════════════════════════════════════════════════ */
+
+.pinned-search-bar-wrapper {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9990;
+  width: 92%;
+  max-width: 780px;
+  animation: slideDownPinned 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+@keyframes slideDownPinned {
+  from {
+    top: -60px;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.95);
+  }
+  to {
+    top: 12px;
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.pinned-exact-search-bar {
+  display: flex;
+  align-items: stretch;
+  background: #ffc700;
+  border: 3.5px solid #ffc700;
+  border-radius: 10px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 199, 0, 0.35);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.pinned-exact-search-bar:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 199, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Left Yellow Label */
+.pinned-label-yellow {
+  background: #ffc700;
+  color: #111111;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  padding: 11px 18px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  letter-spacing: -0.2px;
+}
+
+/* White Button Tabs */
+.pinned-tab-pill {
+  flex: 1;
+  background: #ffffff;
+  border: none;
+  padding: 9px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pinned-tab-pill:hover {
+  background: #f8f9fa;
+}
+
+.tab-pill-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wheel-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222222;
+}
+
+.tab-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.easiest-pill-badge {
+  background: #007aff;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 12px;
+  letter-spacing: 0.3px;
+  text-transform: capitalize;
+}
+
+.rego-box-icon {
+  border: 1.5px solid #222222;
+  border-radius: 4px;
+  padding: 1px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.rego-box-icon span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #222222;
+  letter-spacing: 0.5px;
+}
+
+.blue-arrow-icon {
+  color: #007aff;
+  font-size: 1.15rem;
+  transition: transform 0.2s ease;
+  margin-left: 8px;
+}
+
+.pinned-tab-pill:hover .blue-arrow-icon {
+  transform: translateX(3px);
+}
+
+.pinned-tabs-divider {
+  width: 1.5px;
+  height: 28px;
+  background: #e2e8f0;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+  .pinned-search-bar-wrapper {
+    width: 95%;
+    top: 8px;
+  }
+  .pinned-label-yellow {
+    display: none; /* Hide label on mobile to fit nicely */
+  }
+  .pinned-tab-pill {
+    padding: 8px 10px;
+  }
+  .tab-title {
+    font-size: 0.88rem;
+  }
+  .easiest-pill-badge {
+    display: none;
+  }
+}
+
