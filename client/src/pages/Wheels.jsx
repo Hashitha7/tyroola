@@ -206,6 +206,7 @@ const Wheels = () => {
   const [shippingQuoteResult, setShippingQuoteResult] = useState(null);
   const [modalQty, setModalQty] = useState(4);
   const [modalRimColor, setModalRimColor] = useState('#888888');
+  const [modalViewMode, setModalViewMode] = useState('photo'); // 'photo' | '3d'
   const [addedSuccess, setAddedSuccess] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -256,6 +257,7 @@ const Wheels = () => {
     setActiveWheelDetail(wheel);
     setModalRimColor(wheel.rimColor || '#888');
     setModalQty(4);
+    setModalViewMode('photo');
     setAddedSuccess(false);
   };
 
@@ -591,18 +593,59 @@ const Wheels = () => {
             </button>
 
             <div className="wheel-modal-layout">
-              {/* Left: 3D Interactive Canvas & Finish Controls */}
+              {/* Left: 3D Interactive Canvas / Real Wheel Photo & Finish Controls */}
               <div className="modal-canvas-side">
                 <div className="canvas-header-tag">
-                  <FiRotateCw /> 360° Real-Time 3D Rim Inspector
+                  <div className="canvas-view-toggle">
+                    <button
+                      type="button"
+                      className={`canvas-toggle-btn ${modalViewMode === 'photo' ? 'active' : ''}`}
+                      onClick={() => setModalViewMode('photo')}
+                    >
+                      Wheel Visual
+                    </button>
+                    <button
+                      type="button"
+                      className={`canvas-toggle-btn ${modalViewMode === '3d' ? 'active' : ''}`}
+                      onClick={() => setModalViewMode('3d')}
+                    >
+                      <FiRotateCw size={12} /> 3D View
+                    </button>
+                  </div>
                 </div>
+
                 <div className="canvas-holder">
-                  <TyreCanvas
-                    height="320px"
-                    rimColor={modalRimColor}
-                    rotate={true}
-                    showParticles={false}
-                  />
+                  {modalViewMode === 'photo' ? (
+                    <div className="modal-wheel-photo-wrap">
+                      <img
+                        src={activeWheelDetail.image}
+                        alt={activeWheelDetail.name}
+                        className="modal-wheel-exact-image"
+                        style={{
+                          filter:
+                            modalRimColor === '#ffd700'
+                              ? 'sepia(0.6) saturate(2.2) hue-rotate(5deg) drop-shadow(0 15px 35px rgba(255,215,0,0.35))'
+                              : modalRimColor === '#cbd5e1'
+                              ? 'brightness(1.15) contrast(1.05) drop-shadow(0 15px 35px rgba(203,213,225,0.3))'
+                              : modalRimColor === '#1e222d'
+                              ? 'brightness(0.9) contrast(1.15) drop-shadow(0 15px 35px rgba(0,0,0,0.6))'
+                              : modalRimColor === '#e2e8f0'
+                              ? 'brightness(1.28) contrast(1.1) drop-shadow(0 15px 35px rgba(255,255,255,0.35))'
+                              : 'drop-shadow(0 15px 35px rgba(0,0,0,0.5))',
+                        }}
+                      />
+                      <div className="modal-photo-zoom-badge">
+                        🔍 Hover to zoom
+                      </div>
+                    </div>
+                  ) : (
+                    <TyreCanvas
+                      height="300px"
+                      rimColor={modalRimColor}
+                      rotate={true}
+                      showParticles={false}
+                    />
+                  )}
                 </div>
 
                 {/* Finish Swatches */}
