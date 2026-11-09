@@ -1,29 +1,34 @@
 /* ═════════════════════════════════════════════════════════════════════
-   WHEELS CATALOG PAGE (Matching Tyroola Screenshots with 3D Features)
+   WHEELS CATALOG PAGE (Clean Light Theme matching Tyroola Reference)
    ═════════════════════════════════════════════════════════════════════ */
 
 .wheels-page {
-  background: #f4f5f8;
-  color: #1a1a24;
+  background: #f4f6f9;
+  color: #1a202c;
   min-height: 100vh;
   padding-bottom: 4rem;
 }
 
-/* ── 1. Hero Splash Banner (Matching Screenshot 1) ── */
+/* ── 1. Hero Banner (Light Clean Theme) ── */
 .wheels-hero {
   position: relative;
-  background-size: cover;
-  background-position: center 30%;
-  background-repeat: no-repeat;
-  padding: 2.5rem 0 2rem;
-  color: #ffffff;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 2.2rem 0 2rem;
+  color: #111827;
   overflow: hidden;
 }
-.wheels-hero-overlay {
+.wheels-hero::before {
+  content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 12, 18, 0.75) 0%, rgba(10, 12, 18, 0.92) 100%);
+  background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  opacity: 0.6;
   pointer-events: none;
+}
+.wheels-hero-overlay {
+  display: none;
 }
 .wheels-hero-content {
   position: relative;
@@ -35,25 +40,26 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.82rem;
-  color: #a0aec0;
+  font-size: 0.84rem;
+  color: #64748b;
   margin-bottom: 0.6rem;
 }
 .wheels-breadcrumb .bc-link {
-  color: #cbd5e1;
+  color: #475569;
   text-decoration: none;
+  font-weight: 500;
   transition: color 0.2s;
 }
 .wheels-breadcrumb .bc-link:hover {
-  color: #ffd700;
+  color: #d97706;
 }
 .wheels-breadcrumb .bc-sep {
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.75rem;
 }
 .wheels-breadcrumb .bc-current {
-  color: #fff;
-  font-weight: 600;
+  color: #0f172a;
+  font-weight: 700;
 }
 
 /* Title & State Select */
@@ -62,40 +68,43 @@
   align-items: baseline;
   gap: 1.25rem;
   flex-wrap: wrap;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.6rem;
 }
 .wheels-main-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.5px;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.6px;
   margin: 0;
 }
 .state-quick-select {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ffd700;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
   font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.35rem 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
   border-radius: 8px;
   cursor: pointer;
   outline: none;
+  transition: all 0.2s;
 }
-.state-quick-select option {
-  background: #11141e;
-  color: #fff;
+.state-quick-select:hover,
+.state-quick-select:focus {
+  border-color: #f5a623;
+  background: #ffffff;
 }
 
 /* ── Pill Controls Bar (Matching Screenshot 1) ── */
 .wheels-pill-bar {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.85rem;
   background: #ffffff;
   padding: 0.5rem 0.8rem;
   border-radius: 35px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   max-width: 920px;
   flex-wrap: wrap;
 }
@@ -105,16 +114,17 @@
   position: relative;
   display: flex;
   align-items: center;
-  background: #ffffff;
-  border: 1px solid #dcdfe6;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
   border-radius: 25px;
   padding: 0.6rem 2.2rem 0.6rem 1.1rem;
-  min-width: 170px;
+  min-width: 175px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 .pill-select-wrap:hover {
-  border-color: #ffd700;
+  border-color: #f5a623;
+  background: #ffffff;
 }
 .pill-select {
   appearance: none;
@@ -122,8 +132,8 @@
   border: none;
   outline: none;
   font-size: 0.88rem;
-  color: #2d3748;
-  font-weight: 500;
+  color: #0f172a;
+  font-weight: 600;
   width: 100%;
   cursor: pointer;
   font-family: inherit;
@@ -131,36 +141,36 @@
 .pill-chevron {
   position: absolute;
   right: 0.9rem;
-  color: #718096;
+  color: #64748b;
   pointer-events: none;
   font-size: 0.85rem;
 }
 
-/* More Filters Pill (Black Button) */
+/* More Filters Pill */
 .pill-btn-black {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background: #000000;
+  background: #0f172a;
   color: #ffffff;
   border: none;
   border-radius: 25px;
   padding: 0.65rem 1.4rem;
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
   margin-left: auto;
 }
 .pill-btn-black:hover,
 .pill-btn-black.active {
-  background: #ffd700;
+  background: #f5a623;
   color: #000000;
 }
 
 /* Sort Pill */
 .sort-pill {
-  min-width: 190px;
+  min-width: 195px;
 }
 
 /* Expandable Drawer */
@@ -169,7 +179,8 @@
   border-radius: 16px;
   padding: 1.25rem 1.5rem;
   margin-top: 1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   color: #1a202c;
   display: flex;
   flex-direction: column;
@@ -189,7 +200,7 @@
 .drawer-label {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #4a5568;
+  color: #334155;
 }
 .drawer-chips {
   display: flex;
@@ -197,12 +208,12 @@
   flex-wrap: wrap;
 }
 .drawer-chip {
-  background: #edf2f7;
+  background: #f1f5f9;
   border: 1px solid #cbd5e1;
-  color: #2d3748;
-  font-size: 0.8rem;
+  color: #1e293b;
+  font-size: 0.82rem;
   font-weight: 600;
-  padding: 0.35rem 0.8rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s;
@@ -211,10 +222,10 @@
   background: #e2e8f0;
 }
 .drawer-chip.active {
-  background: #ffd700;
-  border-color: #ffd700;
+  background: #f5a623;
+  border-color: #f5a623;
   color: #000;
-  font-weight: 700;
+  font-weight: 800;
 }
 .filter-drawer-actions {
   display: flex;
@@ -232,7 +243,7 @@
   cursor: pointer;
 }
 .drawer-close-btn {
-  background: #000;
+  background: #0f172a;
   color: #fff;
   border: none;
   padding: 0.4rem 1rem;
@@ -242,13 +253,13 @@
   cursor: pointer;
 }
 .drawer-close-btn:hover {
-  background: #ffd700;
+  background: #f5a623;
   color: #000;
 }
 
-/* ── 2. Top 3 Featured Wheel Cards (Matching Screenshot 1 & 2) ── */
+/* ── 2. Top 3 Featured Wheel Cards (100% Light Theme) ── */
 .wheels-content-section {
-  padding-top: 2.5rem;
+  padding-top: 2.2rem;
 }
 
 .featured-wheels-grid {
@@ -259,19 +270,19 @@
 }
 
 .featured-wheel-card {
-  background: #ffffff;
+  background: #ffffff !important;
   border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e2e8f0 !important;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .featured-wheel-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
-  border-color: #ffd700;
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e1 !important;
 }
 
 /* Top Row: Logo & Badge */
@@ -280,11 +291,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 1.4rem 0.5rem;
+  background: #ffffff !important;
 }
 .brand-logo-text {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 900;
-  color: #000000;
+  color: #0f172a !important;
   letter-spacing: -0.3px;
   text-transform: uppercase;
 }
@@ -318,7 +330,7 @@
   justify-content: center;
   padding: 1.2rem;
   cursor: pointer;
-  background: radial-gradient(circle at center, #ffffff 40%, #f8f9fa 100%);
+  background: #ffffff !important;
 }
 .wheel-img-3d {
   max-width: 190px;
@@ -327,10 +339,10 @@
   height: auto;
   object-fit: contain;
   transition: transform 0.4s ease;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.22));
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.2));
 }
 .featured-wheel-card:hover .wheel-img-3d {
-  transform: scale(1.08) rotate(3deg);
+  transform: scale(1.06) rotate(3deg);
 }
 .hover-3d-hint {
   position: absolute;
@@ -339,11 +351,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(15, 23, 42, 0.85);
   color: #ffd700;
   font-size: 0.68rem;
   font-weight: 700;
-  padding: 0.2rem 0.5rem;
+  padding: 0.25rem 0.55rem;
   border-radius: 4px;
   backdrop-filter: blur(4px);
   opacity: 0;
@@ -356,25 +368,26 @@
 /* Info */
 .card-info-wrap {
   padding: 0.8rem 1.4rem;
+  background: #ffffff !important;
 }
 .wheel-title {
   font-size: 0.88rem;
   font-weight: 800;
-  color: #000000;
+  color: #0f172a !important;
   margin: 0 0 0.35rem;
   text-transform: uppercase;
   line-height: 1.35;
 }
 .wheel-specs-code {
-  font-size: 0.76rem;
-  color: #4a5568;
+  font-size: 0.78rem;
+  color: #64748b !important;
   font-family: monospace;
   font-weight: 600;
 }
 
 /* Tagline Ribbon */
 .tagline-ribbon {
-  padding: 0.5rem 1rem;
+  padding: 0.55rem 1rem;
   font-size: 0.78rem;
   font-weight: 700;
   text-align: center;
@@ -382,7 +395,7 @@
   margin-top: auto;
 }
 .ribbon-black {
-  background: #000000;
+  background: #0f172a;
 }
 .ribbon-green {
   background: #00c853;
@@ -398,22 +411,22 @@
   flex-direction: column;
   gap: 0.75rem;
   border-top: 1px solid #edf2f7;
-  background: #ffffff;
+  background: #ffffff !important;
 }
 .shipping-quote-link {
   background: none;
   border: none;
   padding: 0;
-  font-size: 0.74rem;
-  color: #2b6cb0;
+  font-size: 0.76rem;
+  color: #2563eb;
   text-decoration: underline;
   cursor: pointer;
   text-align: left;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
 }
 .shipping-quote-link:hover {
-  color: #000;
+  color: #1d4ed8;
 }
 
 .price-and-action-row {
@@ -426,14 +439,14 @@
   align-items: baseline;
 }
 .price-dollar {
-  font-size: 1.6rem;
+  font-size: 1.65rem;
   font-weight: 900;
-  color: #000000;
+  color: #0f172a !important;
 }
 .price-ea-label {
-  font-size: 0.82rem;
-  color: #4a5568;
-  font-weight: 600;
+  font-size: 0.84rem;
+  color: #64748b;
+  font-weight: 700;
 }
 
 .btn-show-details {
@@ -455,12 +468,12 @@
 }
 
 .stock-warning-text {
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   color: #e53e3e;
   font-weight: 600;
 }
 
-/* ── 3. Horizontal Wheel Cards (Matching Screenshots 2, 3, 4) ── */
+/* ── 3. Horizontal Wheel Cards (100% Light Theme matching Screenshots 2, 3, 4) ── */
 .grudge-wheels-list {
   display: flex;
   flex-direction: column;
@@ -469,21 +482,21 @@
 }
 
 .horizontal-wheel-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px;
   padding: 1.4rem 1.8rem;
   display: grid;
   grid-template-columns: 140px 1fr auto;
   align-items: center;
   gap: 2rem;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: all 0.25s ease;
 }
 .horizontal-wheel-card:hover {
-  border-color: #ffd700;
+  border-color: #cbd5e1 !important;
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .horizontal-wheel-img-wrap {
@@ -492,6 +505,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #ffffff !important;
   cursor: pointer;
 }
 .horizontal-wheel-img {
@@ -499,7 +513,7 @@
   max-height: 100%;
   object-fit: contain;
   transition: transform 0.3s ease;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
 }
 .horizontal-wheel-card:hover .horizontal-wheel-img {
   transform: scale(1.08) rotate(4deg);
@@ -509,29 +523,30 @@
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  background: #ffffff !important;
 }
 .grudge-brand-tag {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  color: #1a202c;
+  color: #0f172a !important;
   letter-spacing: 0.5px;
   display: flex;
   align-items: center;
   gap: 0.35rem;
 }
 .horizontal-wheel-name {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  color: #000000;
+  color: #0f172a !important;
   margin: 0;
   text-transform: uppercase;
   line-height: 1.35;
 }
 .horizontal-wheel-specs {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-family: monospace;
   font-weight: 600;
-  color: #718096;
+  color: #64748b !important;
 }
 
 .horizontal-wheel-actions {
@@ -552,7 +567,7 @@
   border: none;
   font-size: 0.88rem;
   font-weight: 800;
-  padding: 0.65rem 1.6rem;
+  padding: 0.65rem 1.8rem;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
@@ -567,7 +582,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(15, 23, 42, 0.75);
   backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
@@ -582,24 +597,24 @@
 
 .wheel-3d-modal {
   position: relative;
-  background: #0f131d;
-  color: #ffffff;
-  border: 1px solid rgba(255, 215, 0, 0.35);
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
   border-radius: 20px;
   max-width: 860px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
   padding: 2rem;
 }
 .modal-close-btn {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -611,8 +626,8 @@
   z-index: 10;
 }
 .modal-close-btn:hover {
-  background: #ffd700;
-  color: #000;
+  background: #0f172a;
+  color: #fff;
 }
 
 .wheel-modal-layout {
@@ -625,14 +640,14 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  background: radial-gradient(circle at center, #1a202c 0%, #0d111a 100%);
+  background: #f8fafc;
   border-radius: 16px;
   padding: 1rem;
-  border: 1px solid rgba(255, 215, 0, 0.12);
+  border: 1px solid #e2e8f0;
 }
 .canvas-header-tag {
-  font-size: 0.75rem;
-  color: #ffd700;
+  font-size: 0.78rem;
+  color: #0f172a;
   font-weight: 700;
   letter-spacing: 0.5px;
   display: flex;
@@ -654,23 +669,23 @@
   padding-top: 0.5rem;
 }
 .finish-label {
-  font-size: 0.76rem;
-  color: #a0aec0;
+  font-size: 0.78rem;
+  color: #64748b;
   font-weight: 600;
 }
 .finish-swatch {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border: 2px solid #4a5568;
+  border: 2px solid #cbd5e1;
   cursor: pointer;
   transition: all 0.2s;
 }
 .finish-swatch:hover,
 .finish-swatch.active {
-  border-color: #ffd700;
+  border-color: #f5a623;
   transform: scale(1.15);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 10px rgba(245, 166, 35, 0.4);
 }
 
 .modal-details-side {
@@ -679,8 +694,8 @@
   gap: 0.8rem;
 }
 .modal-brand-badge {
-  font-size: 0.72rem;
-  color: #ffd700;
+  font-size: 0.75rem;
+  color: #d97706;
   font-weight: 800;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -688,15 +703,15 @@
 .modal-wheel-title {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
   margin: 0;
   line-height: 1.3;
 }
 .modal-specs-pill {
   font-family: monospace;
   font-size: 0.8rem;
-  color: #a0aec0;
-  background: rgba(255, 255, 255, 0.05);
+  color: #475569;
+  background: #f1f5f9;
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
   display: inline-block;
@@ -707,46 +722,47 @@
   align-items: baseline;
   justify-content: space-between;
   padding: 0.6rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
 }
 .modal-single-price strong {
   font-size: 1.5rem;
-  color: #ffd700;
+  color: #0f172a;
 }
 .modal-single-price span {
   font-size: 0.82rem;
-  color: #a0aec0;
+  color: #64748b;
 }
 .modal-total-price {
-  font-size: 0.82rem;
-  color: #e2e8f0;
+  font-size: 0.84rem;
+  color: #475569;
 }
 .modal-total-price strong {
-  color: #ffd700;
-  font-size: 1rem;
+  color: #d97706;
+  font-size: 1.05rem;
 }
 
 .specs-table {
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: #f8fafc;
   padding: 0.75rem 1rem;
   border-radius: 10px;
-  font-size: 0.8rem;
+  border: 1px solid #e2e8f0;
+  font-size: 0.82rem;
 }
 .spec-row {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+  border-bottom: 1px dashed #e2e8f0;
   padding-bottom: 0.3rem;
 }
 .spec-row span {
-  color: #a0aec0;
+  color: #64748b;
 }
 .spec-row strong {
-  color: #fff;
+  color: #0f172a;
 }
 
 .modal-qty-row {
@@ -755,35 +771,36 @@
   gap: 1rem;
 }
 .qty-label {
-  font-size: 0.82rem;
-  color: #a0aec0;
+  font-size: 0.84rem;
+  color: #64748b;
   font-weight: 600;
 }
 .qty-counter {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(255, 215, 0, 0.3);
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   overflow: hidden;
 }
 .qty-btn {
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+  background: #f1f5f9;
+  color: #0f172a;
   border: none;
   width: 32px;
   height: 32px;
   font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
   transition: background 0.2s;
 }
 .qty-btn:hover {
-  background: #ffd700;
+  background: #f5a623;
   color: #000;
 }
 .qty-number {
-  padding: 0 0.8rem;
+  padding: 0 0.9rem;
   font-weight: 800;
-  color: #ffd700;
+  color: #0f172a;
   font-size: 0.95rem;
 }
 
@@ -794,7 +811,7 @@
 }
 .btn-modal-add {
   flex: 1.2;
-  background: linear-gradient(135deg, #ffd700, #ff9500);
+  background: #f5a623;
   color: #000;
   border: none;
   padding: 0.75rem 1rem;
@@ -809,8 +826,9 @@
   transition: all 0.2s;
 }
 .btn-modal-add:hover {
+  background: #e09419;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.35);
+  box-shadow: 0 6px 18px rgba(245, 166, 35, 0.35);
 }
 .btn-modal-add.success {
   background: #10b981;
@@ -818,9 +836,9 @@
 }
 .btn-modal-checkout {
   flex: 1;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 215, 0, 0.4);
-  color: #ffd700;
+  background: #0f172a;
+  border: none;
+  color: #ffffff;
   padding: 0.75rem 1rem;
   border-radius: 10px;
   font-size: 0.88rem;
@@ -829,15 +847,15 @@
   transition: all 0.2s;
 }
 .btn-modal-checkout:hover {
-  background: #ffd700;
-  color: #000;
+  background: #1e293b;
+  color: #fff;
 }
 
 .modal-trust-row {
   display: flex;
   gap: 1.2rem;
-  font-size: 0.74rem;
-  color: #a0aec0;
+  font-size: 0.76rem;
+  color: #64748b;
   margin-top: 0.3rem;
 }
 .modal-trust-row span {
@@ -851,7 +869,7 @@
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -865,7 +883,7 @@
   padding: 1.8rem;
   max-width: 440px;
   width: 100%;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
 }
 .shipping-modal-header {
   display: flex;
@@ -877,6 +895,7 @@
   font-size: 1.15rem;
   font-weight: 800;
   margin: 0;
+  color: #0f172a;
 }
 .modal-close-icon {
   background: none;

@@ -428,7 +428,7 @@ const Wheels = () => {
         {filteredFeatured.length > 0 && (
           <div className="featured-wheels-grid">
             {filteredFeatured.map((wheel) => (
-              <article key={wheel.id} className="featured-wheel-card card-3d">
+              <article key={wheel.id} className="featured-wheel-card">
                 {/* Brand Header & Badge */}
                 <div className="card-top-row">
                   <span className="brand-logo-text">{wheel.brand}</span>
@@ -504,7 +504,7 @@ const Wheels = () => {
         {/* ── 3. Horizontal Wheel Cards List (Matching Screenshots 2, 3, 4) ── */}
         <div className="grudge-wheels-list">
           {filteredGrudge.map((w) => (
-            <article key={w.id} className="horizontal-wheel-card card-3d">
+            <article key={w.id} className="horizontal-wheel-card">
               {/* Wheel Graphic */}
               <div
                 className="horizontal-wheel-img-wrap"
@@ -797,3 +797,4 @@ const Wheels = () => {
 };
 
 export default Wheels;
+
