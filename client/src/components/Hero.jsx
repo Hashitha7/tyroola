@@ -1,14 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiArrowRight, FiX } from 'react-icons/fi';
 import heroBg from '../Images/Background/B1.jpg';
+import car1 from '../Images/Cars/c1.png';
+import car2 from '../Images/Cars/c2.jpg';
+import car3 from '../Images/Cars/c3.jpg';
+import car4 from '../Images/Cars/C4.jpg';
 import './Hero.css';
+
+const carImages = [car1, car2, car3, car4];
 
 const Hero = () => {
   const navigate = useNavigate();
+  const [currentCarIndex, setCurrentCarIndex] = useState(0);
   const [activeModal, setActiveModal] = useState(null); // 'size' | 'rego' | null
   const [tyreSize, setTyreSize] = useState({ width: '205', aspectRatio: '55', rim: '16' });
   const [rego, setRego] = useState('');
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentCarIndex((prev) => (prev + 1) % carImages.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSizeSearch = (e) => {
     e.preventDefault();
@@ -87,14 +101,29 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* Right Car Graphic with Realistic 3D Wheel Animation */}
+            {/* Right Car Graphic: C1.png, C2.jpg, C3.jpg, C4.jpg auto-carousel */}
             <div className="hero-car-visual">
-              <img
-                src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=900&auto=format&fit=crop&q=80"
-                alt="Sports Car with Tyroola Tyres"
-                className="hero-car-img"
-              />
-              <div className="car-reflection" />
+              <div className="hero-car-carousel">
+                {carImages.map((car, idx) => (
+                  <img
+                    key={idx}
+                    src={car}
+                    alt={`Tyroola Vehicle ${idx + 1}`}
+                    className={`hero-car-img ${idx === currentCarIndex ? 'active' : ''}`}
+                  />
+                ))}
+              </div>
+              <div className="car-carousel-dots">
+                {carImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    className={`car-dot ${idx === currentCarIndex ? 'active' : ''}`}
+                    onClick={() => setCurrentCarIndex(idx)}
+                    title={`Vehicle ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 

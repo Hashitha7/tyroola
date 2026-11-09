@@ -134,22 +134,71 @@
   margin: 0;
 }
 
-/* Car Visual on Right */
+/* Car Visual on Right - Auto Carousel */
 .hero-car-visual {
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 340px;
+}
+
+.hero-car-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-car-img {
-  width: 100%;
-  max-width: 640px;
-  height: auto;
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.75));
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.hero-car-img.active {
+  opacity: 1;
   transform: scale(1.05);
+  pointer-events: auto;
   animation: float 4s ease-in-out infinite;
+}
+
+.car-carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  z-index: 5;
+}
+
+.car-dot {
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.car-dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.car-dot.active {
+  background: #ffc700;
+  width: 42px;
+  box-shadow: 0 0 12px rgba(255, 199, 0, 0.6);
 }
 
 /* =========================================
